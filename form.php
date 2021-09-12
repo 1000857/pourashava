@@ -2,12 +2,15 @@
 <?php include_once 'temp/nav.php'; ?>
 
  <?php
-                if(isset($_SESSION['msg'])){
-                    echo $_SESSION['msg'];
-                    unset ($_SESSION['msg']);
-                }
-                ?>
-<form action="mainform.php" method="POST">
+        if(isset($_SESSION['msg'])){ ?>
+            <div>
+                <p><?= $_SESSION['msg'];?></p>
+            </div>
+            <?php
+            unset ($_SESSION['msg']);
+        }
+    ?>
+<form action="mainform.php" method="POST" enctype="multipart/form-data">
 <ul class="form-style-1">
     <li><label>সেবা সমূহ <span class="required">*</span></label>
                                             
@@ -155,7 +158,7 @@
     </li>
     <li>
         <label>Passport Size Photo <span class="required">*</span></label>
-        <input type="file" name="photo" class="field-long" />
+        <input type="file" name="photo" id="photo" class="field-long" />
     </li>
     <li>
         <input type="submit" value="Submit" />

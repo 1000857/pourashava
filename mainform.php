@@ -27,7 +27,7 @@ if($_POST){
     $email       = $_POST['email'];
     $phone      = $_POST['phone'];
     $other       = $_POST['other'];
-    $photo       = $_POST['photo'];
+    
 
 
     if($seba_type == ''){
@@ -157,11 +157,64 @@ if($_POST){
         header('location:form.php');
         exit;
     }
-    if($photo == ''){
+    /*if($photo == ''){
         $_SESSION['msg']= 'Please Insert Passport Size Photo.<br>';
         header('location:form.php');
         exit;
+    }*/
+
+    //---- Image Upload 
+    $_SESSION['msg'] = '';
+    $target_dir = "images/application/";
+    $fileName= basename($_FILES["photo"]["name"]);
+    $target_file = $target_dir . $fileName;
+
+    
+    $uploadOk = 1; // Flag
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    // Check if image file is a actual image or fake image
+    if(isset($_POST["submit"])) {
+        $check = getimagesize($_FILES["photo"]["tmp_name"]);
+        if($check !== false) {
+            echo "File is an image - " . $check["mime"] . ".";
+            $uploadOk = 1;
+        } else {
+            $_SESSION['msg'] = "File is not an image.<br>";
+            $uploadOk = 0;
+        }
     }
+    
+    // Check if file already exists
+    if (file_exists($target_file)) {
+        $_SESSION['msg'] = "Sorry, file already exists.<br>";
+        $uploadOk = 0;
+    }
+    
+    // Check file size
+    if ($_FILES["photo"]["size"] > 500000000) {
+        $_SESSION['msg'] = "Sorry, your file is too large.<br>";
+        $uploadOk = 0;
+    }
+    
+    // Allow certain file formats
+    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
+        $_SESSION['msg'] = "Sorry, only JPG,PNG and JPEG files are allowed.";
+        $uploadOk = 0;
+    }
+    
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        $_SESSION['msg'] = "Sorry, your file was not uploaded.";
+        header('location:form.php');
+    // if everything is ok, try to upload file
+    } else {
+        if (move_uploaded_file($_FILES["photo"]["tmp_name"], $target_file)) {
+            echo "The file ". basename( $_FILES["photo"]["name"]). " has been uploaded.";
+        } else {
+            echo "Sorry, there was an error uploading your file.";
+        }
+    }   
+    
 
 
 
@@ -172,7 +225,7 @@ if($_POST){
 
        
             $sql="INSERT INTO service (service_name, nid, birth_day, first_name, last_name, gender, father, mother, husband_wife, occupation, education, relegion, present_village, present_ward, present_thana, present_upozilla, present_district, permanent_village, permanent_ward, permanent_thana, permanent_upozilla, permanent_district, mobile, email, other, pic  )
-				VALUES ('$seba_type', '$nid', '$dob', '$fname', '$lname', '$gender', '$father', '$mother','$spouse', '$job', '$education', '$religion', '$village', '$ward', '$thana', '$upazilla', '$district', '$permanent_village', '$permanent_ward', '$permanent_thana', '$permanent_upazilla', '$permanent_district', '$phone','$email', '$other', '$photo')";
+				VALUES ('$seba_type', '$nid', '$dob', '$fname', '$lname', '$gender', '$father', '$mother','$spouse', '$job', '$education', '$religion', '$village', '$ward', '$thana', '$upazilla', '$district', '$permanent_village', '$permanent_ward', '$permanent_thana', '$permanent_upazilla', '$permanent_district', '$phone','$email', '$other', '$fileName')";
 
 
             $conn->query($sql);

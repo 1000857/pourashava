@@ -29,7 +29,7 @@
                     <a href="batch_index.php"> <i class="menu-icon fa fa-tasks"></i>Manage Batches</a>
                 </li>
                 <li>
-                    <a href="user_index.php"> <i class="menu-icon fa fa-user"></i>Manage Users</a>
+                    <a href="application_list.php"> <i class="menu-icon fa fa-user"></i>Application</a>
                 </li>
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Seat Plan</a>

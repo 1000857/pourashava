@@ -2460,3 +2460,39 @@ header .form-inline {
         .right-panel .content #bootstrap-data-table_wrapper .table td,
         .right-panel .content #bootstrap-data-table_wrapper .table th {
           padding: 5px; } }
+
+
+
+.card-body2 {
+    padding: 15px;
+}
+.card2 {
+    margin-bottom: 24px;
+    margin-bottom: 1.5rem;
+    border-radius: 0;
+}
+
+.id-card2 {
+    
+    height: 55px;
+    TEXT-ALIGN: center;
+}
+.id-card-photo2 {
+
+    height: 308px;
+    width: 300PX;
+    MARGIN-LEFT: 300PX;
+}
+.id-card-photo2 img{
+    height: 240px;
+    width: 201PX;
+    MARGIN-LEFT: 105PX;
+    margin-top: 40PX;
+
+}
+.card-body3 {
+    padding: 203px;
+    MARGIN-LEFT: 123PX;
+    /* TEXT-ALIGN: center; */
+    margin-top: -169px;
+}
