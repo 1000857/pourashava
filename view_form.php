@@ -5,6 +5,7 @@ if (!isset($_SESSION['loggedin'])){
     exit;
 }
 ?>
+
 <?php include_once 'template/_head.php'?>
 
 <body>
@@ -41,8 +42,8 @@ if (!isset($_SESSION['loggedin'])){
             </div>
         </div>
     </div>
- 
- <?php
+
+<?php
         if(isset($_SESSION['msg'])){ 
     ?>
             <div>
@@ -63,101 +64,139 @@ if(isset($_SESSION['files'])){
     include_once 'db_con.php';
     $conn = connect();
     $sql = "SELECT * FROM service WHERE id='$appid'";
-    $services = $conn -> query ($sql);
-    
+    $result = $conn -> query ($sql);
+    $service = $result->fetch_assoc();
     }
     
 ?>
-    <div class="content mt-3">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card2">
-                    
-                    <div class="card-body2">
-                    	<div class="id-card2">
-                    		<h2>CHARACTER CERTIFICATE</h2>
-                    	</div>
-                        <?php
-                                    foreach ($services as $service){
-                                ?>
-                    	<div class="id-card-photo2">
-                    		<img src="images/application/<?= $service['pic']?>" alt="">
-                    	</div>
-                       <div class="card-body3">
-                        <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
-                            <table>
-                                <tbody>
-                                    
-                                    
-                    	<tr>					 
-                        <td>NAME:</td>
-                        <td><?= $service['first_name']?> <?= $service['last_name']?></td>
-                        
-                      </tr>
-                      <tr>					 
-                        <td>FATHER NAME</td>
-                        <td><?= $service['father']?></i></td>
-                      </tr>
-                              <tr>					 
-                                <td>MOTHER NAME</td>
-                                <td><?= $service['mother']?></i></td>
-                              </tr>
-                              <tr>					 
-                                <td>HUSBAND/WIFE NAME</td>
-                                <td><?= $service['husband_wife']?></i></td>
-                              </tr>
-                              <tr>					 
-                                <td>NATIONAL ID NO.</td>
-                                <td><?= $service['nid']?></i></td>
-                                
-                              </tr>
-                              <tr>					 
-                                <td style="width:90%">DATE OF BIRTH</td>
-                                <td><?= $service['birth_day']?></i></td>
-                              </tr>
-                              <tr>					 
-                                <td style="width:90%">GENDER</td>
-                                <td><?= $service['gender']?></i></td>
-                              </tr>
-                              <tr>					 
-                                <td style="width:90%">PRESENT ADDRESS</td>
-                                <td><?= $service['present_village']?>,<?= $service['present_ward']?>,<?= $service['present_upozilla']?>,<?= $service['present_thana']?>,<?= $service['present_district']?></i></td>
-                              </tr>
-                          <?php } ?>
-                          </tbody>
-                            </table>
-                                <!--<th>Religion</th>
-                                <th>Present Village</th> 
-                                <th>Present Ward</th>
-                                <th>Present Upazilla</th>
-                                <th>Present Thana</th>
-                                <th>Present District</th>
-                                <th>Permanent Village</th>
-                                <th>Permanent Ward</th>
-                                <th>Permanent Upazilla</th>
-                                <th>Permanent Thana</th>
-                                <th>Permanent District</th>
-                                <th>Phone</th>
-                                <th>Email</th>
-                                <th>Attachment</th>
-                                <th>Photo</th>-->
-                           
-                                
-                                    
-                                      
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--/.col-->
 
 
-    </div> <!-- .content -->
-</div><!-- /#right-panel -->
+<div id="print" style="width:795px; height:890px; padding:30px; margin-left: 120px;  border: 0px solid #787878">
 
-<!-- Right Panel -->
-<?php include_once 'template/footer.php'?>
+<div style="width:944px; height:990px; padding:55px; TEXT-ALIGN: justify; border: 5px solid #787878">
+       <span style="font-size:40px; font-weight:bold; margin-left:145px;">
+        DAUDKANDI POURASHAVA
+       </span></br>
+       <span style="font-size:17px; margin-left:310px;">
+        POST OFFICE: DAUDKANDI
+       </span></br>
+       <span style="font-size:17px; margin-left:323px;">
+        UPAZILLA: DAUDKANDI
+       </span></br>
+       <span style="font-size:17px; margin-left:339px;">
+        DISTRICT: CUMILLA
+       </span></br></br>
+       <span style="font-size:20px; font-weight:bold; margin-left:282px;">
+        <?php 
+            if ($service['service_name'] == 'ch_cer') {
+                echo "CHARACTER CERTIFICATE";
+            } elseif ($service['service_name'] == 'death_cer') {
+                echo "DEATH CERTIFICATE";
+            } elseif ($service['service_name'] == 'nagorik_cer') {
+                echo "NATIONALITY CERTIFICATE";
+            }elseif ($service['service_name'] == 'birth_cer') {
+                echo "BIRTH CERTIFICATE";
+            }
+        ?>
+           
+       </span>
+ 
+       <br><br><br><br>
+
+       <?php if ($service['service_name'] == 'ch_cer') { ?>
+
+           <span style="font-size:20px"; text-align:left; >This is to certify that <b><?= $service['first_name']?> <?= $service['last_name']?></b> son of <b><?= $service['father']?></b> & <b><?= $service['mother']?></b>, Vill-<b> <?= $service['permanent_village']?></b>,UPO- <b> <?= $service['permanent_upozilla']?></b>,THA- <b><?= $service['permanent_thana']?></b>, DIST- <b><?= $service['permanent_district']?></b>, is known to me. This person is a citizen of Bangladesh by birth.</span>
+       <br><br>
+       <span style="font-size:20px">To the best of my knowledge, this person bears a good moral character and is not involved in such activities which are against the state freedom and peace.</span><br/><br/>
+       <span style="font-size:20px">I wish all success and prosperity.</span> <br/><br/><br/><br/><br/><br/>
+       <span style="font-size:15px; margin-left:500px; font-style: italic;">SIGN OF MAYOR</span> <br/><br/>
+
+       <?php } elseif ($service['service_name'] == 'nagorik_cer') { ?><br>
+           
+
+            <span style="font-size:20px"; text-align:left; >SL. NUMBER: 
+                     <?php
+                     $number =  random_int(10000, 10000000);
+            echo $number;
+            ?>
+      </br></br></br>
+           <span style="font-size:20px"; text-align:left; >This is to certify that <b><?= $service['first_name']?> <?= $service['last_name']?></b> son of <b><?= $service['father']?></b> & <b><?= $service['mother']?></b>, Vill-<b> <?= $service['permanent_village']?></b>,UPO- <b> <?= $service['permanent_upozilla']?></b>,THA- <b><?= $service['permanent_thana']?></b>, DIST- <b><?= $service['permanent_district']?></b>, is known to me. This person is a citizen of Bangladesh by birth and permanent citizen of <b> <?= $service['permanent_upozilla']?></b>.</span>
+       <br><br>
+       <span style="font-size:20px">To the best of my knowledge, this person bears a good moral character and is not involved in such activities which are against the state freedom and peace.</span><br/><br/>
+       <span style="font-size:20px">I wish all success and prosperity.</span> <br/><br/><br/><br/><br/><br/><br/><br/>
+       <span style="font-size:15px; margin-left:20px; font-style: italic;">DATE:__________________</span>
+       <span style="font-size:15px; margin-left:470px; font-style: italic;">SIGN OF MAYOR</span> <br/><br/>
+
+
+       <?php } elseif ($service['service_name'] == 'birth_cer') { ?><br>
+       <span style="font-size:20px"; text-align:left; >NUMBER: 
+         <?php
+         $number =  random_int(100000000000000, 100000000000000000);
+echo $number;
+?>
+                                        
+  <!-- <tr>
+    <th>1</th>
+    <th>2</th>
+    <th>3</th>
+    <th>1</th>
+    <th>2</th>
+    <th>3</th>
+    <th>1</th>
+    <th>2</th>
+    <th>3</th>
+    <th>1</th>
+    <th>2</th>
+    <th>3</th>
+    <th>1</th>
+    <th>2</th>
+    <th>3</th>
+    <th>1</th>
+    <th>2</th>
+    <th>3</th>
+  </tr>-->
+</span>
+<br/>
+
+ <span style="font-size:20px"; text-align:CENTRE; >NAME: <?= $service['first_name']?> <?= $service['last_name']?></span>
+<br/>
+
+ <span style="font-size:20px"; text-align:left; >BIRTH: <?= $service['birth_day']?></span>
+<br/>
+
+<span style="font-size:20px"; text-align:left; >GENDER: <?= $service['gender']?></span>
+<br/>
+
+<span style="font-size:20px"; text-align:left; >NATIONALITY: BANGLADESHI</span>
+<br/>
+
+ <span style="font-size:20px"; text-align:left; >BIRTH PLACE: <?= $service['permanent_village']?>,<?= $service['permanent_upozilla']?>,<?= $service['permanent_thana']?>,<?= $service['permanent_district']?></span>
+<br/>
+
+ <span style="font-size:20px"; text-align:left; >FATHER NAME: <?= $service['father']?></span>
+<br/>
+
+<span style="font-size:20px"; text-align:left; >NATIONALITY: BANGLADESHI</span>
+<br/>
+
+ <span style="font-size:20px"; text-align:left; >MOTHER NAME: <?= $service['mother']?></span>
+<br/>
+
+<span style="font-size:20px"; text-align:left; >NATIONALITY: BANGLADESHI</span>
+<br/>
+
+ <span style="font-size:20px"; text-align:left; >PERMANENT ADDRESS: <?= $service['permanent_village']?>,<?= $service['permanent_upozilla']?>,<?= $service['permanent_thana']?>,<?= $service['permanent_district']?></span>
+<br/><br/><br/><br/><br/>
+     <span style="font-size:15px; font-style: italic;">SIGN OF UP SECRETARY</span>
+       <span style="font-size:15px; margin-left:400px; font-style: italic;">SIGN OF MAYOR</span>
+       <?php } ?>
+       
+       
+</div>
+</div>
+</div>
+</body>
+
  <script>
         function printDiv(divName){
             var printContents = document.getElementById(divName).innerHTML;

@@ -1,5 +1,5 @@
 
-
+<?php session_start()?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -38,10 +38,38 @@
         </div>
         <div class="fl_right">
             <ul class="nospace">
-                <li><a href="#"><i class="fas fa-home"></i></a></li>
-                <li><a href="#" title="Help Centre"><i class="far fa-life-ring"></i></a></li>
-                <li><a href="signin_form.php" title="Login"><i class="fas fa-sign-in-alt"></i></a></li>
-                <li><a href="signup_form.php" title="Sign Up"><i class="fas fa-edit"></i></a></li>
+
+
+                 
+<div class="dropdown">
+   <?php 
+            if(isset($_SESSION['loggedin']) && $_SESSION['user_role']!=1){ ?>
+  <button class="dropbtn"><?php echo $_SESSION['user_name']; ?></button>
+  <div class="dropdown-content">
+    <a href="update_profile_form.php">Update profile</a>
+    <a href="change_pass_form.php">Change password</a>
+    <a href="logout.php">Logout</a>
+  </div>
+  <?php }elseif(isset($_SESSION['loggedin']) && $_SESSION['user_role']==1){ ?> 
+    <button class="dropbtn">Admin</button>
+  <div class="dropdown-content">
+    <a href="dashboard.php">Admin Dashboard</a>
+    <a href="change_pass_form.php">Change password</a>
+    <a href="logout.php">Logout</a>
+
+  </div>
+  <?php }else{ ?>
+    <button class="dropbtn">Account</button>
+  <div class="dropdown-content">
+    <a href="signin_form.php">Sign In</a>
+    <a href="#">Sign Up</a>
+    
+
+  </div>
+  <?php } ?>
+</div>
+
+
                 <li id="searchform">
                     <div>
                         <form action="#" method="post">

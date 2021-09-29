@@ -29,7 +29,7 @@ if($cpass == $password){
 	$sql = "UPDATE `member` SET `Password`='$npass' WHERE id =$mid";
 	$conn->query($sql);
 	$_SESSION['msg']= 'Your password updated successfully.<br>';
-	header('location:change_pass_form.php');
+	header('location:index.php');
 }else{
 	$_SESSION['msg']= 'Incorrect current password.<br>';
 	header('location:change_pass_form.php');

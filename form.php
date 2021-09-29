@@ -17,10 +17,10 @@
                                                 
          <select name="seba_type" class="form-control" required="">
                                                  <option value=""selected="">চিহ্নিত করুন</option>
-                                                    <option value="ci_cer" >নাগরিকত্ব সনদ</option>
+                                                    <option value="nagorik_cer" >নাগরিকত্ব সনদ</option>
                                                     <option value="death_cer">মৃত্যু সনদ</option>
                                                     <option value="ch_cer">চারিত্রিক সনদ</option>
-                                                    
+                                                    <option value="birth_cer">BIRTH CERTIFICATE</option>
                                                     <option value="homeless">ভূমিহীন সনদ</option>
                                                     
                                                     <option value="disable">প্রকৃত বাকঁ ও শ্রবন প্রতিবন্ধী</option>

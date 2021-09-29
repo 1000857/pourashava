@@ -1,35 +1,35 @@
 <?php include_once 'temp/header.php'; ?>
 <?php include_once 'temp/nav.php'; ?>
-<?php
+<?php 
 
-$userid = $_SESSION['user_id'];
+$uid = $_SESSION['user_id'];
 
-if(!$_SESSION['loggedin']){
-    header("location:signup.php");
-}
+    if(!$_SESSION['loggedin']){
+        header("location:sign_in_form.php");
+    }
 
-include_once 'db_connection.php';
-$conn = connect();
+    include_once 'db_con.php';
+    $conn = connect();
 
-$sql = "SELECT * FROM user WHERE id = '$userid'";
-$result = $conn->query($sql);
+    $sql = "SELECT * FROM member WHERE id = '$uid'";
+    $result = $conn->query($sql);
+    
+    foreach($result AS $row){
 
-foreach($result AS $row){
+?>
 
-    ?>
 
     <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
         <div class="wrapper wrapper--w680">
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title">Update Your Profile</h2>
-
-                    <?php
-                    if(isset($_SESSION['msg'])){
-                        echo $_SESSION['msg'];
-                        unset ($_SESSION['msg']);
-                    }
-                    ?>
+<?php 
+            if(isset($_SESSION['msg'])){
+                echo $_SESSION['msg'];
+                unset ($_SESSION['msg']);
+                }
+        ?>
                     <form action="update_profile.php" method="POST">
                         <div class="row row-space">
                             <div class="col-2">
@@ -74,23 +74,13 @@ foreach($result AS $row){
 
 
                         </div>
-                        <div class="input-group">
-                            <label class="label">Job Position</label>
-                            <div class="rs-select2 js-select-simple select--no-search">
-                                <select value ="<?=$row['Job_post']?>" name="subject">
-                                    <option disabled="disabled" selected="selected">Choose option</option>
-                                    <option>Admin</option>
-                                    <option>Mayor</option>
-                                    <option>Admin Officer</option>
-                                    <option>Peon</option>
-                                </select>
-                                <div class="select-dropdown"></div>
-                            </div>
-                        </div>
+                        
                         <div class="p-t-15">
                             <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
                         </div>
                     </form>
+                    <button type="button"  class="btn chngpass btn-outline-info"><a href="change_pass_form.php"><b>Change password</b></a></button>
+                        <button type="button" class="btn delac btn-outline-info"><a href="delete_profile.php"><b>Delete account</b></a></button>
                 </div>
             </div>
         </div>

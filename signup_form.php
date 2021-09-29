@@ -1,4 +1,4 @@
-<?php include_once 'temp/header.php'; ?>
+0<?php include_once 'temp/header.php'; ?>
 <?php include_once 'temp/nav.php'; ?>
 
 <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
@@ -76,7 +76,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="input-group">
+                  <!-- <div class="input-group">
                         <label class="label">Job Position</label>
                         <div class="rs-select2 js-select-simple select--no-search">
                             <select name="subject">
@@ -88,7 +88,7 @@
                             </select>
                             <div class="select-dropdown"></div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="p-t-15">
                         <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
                     </div>

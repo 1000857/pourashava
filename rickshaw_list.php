@@ -26,7 +26,7 @@ if (!isset($_SESSION['loggedin'])){
         <div class="col-sm-4">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>Form management</h1>
+                    <h1>Rickshaw/Van Registration Form</h1>
                 </div>
             </div>
         </div>
@@ -45,14 +45,14 @@ if (!isset($_SESSION['loggedin'])){
 <?php 
                                     
     if(isset($_SESSION['files'])){
-        $services = $_SESSION['files'];
+        $rickshaws = $_SESSION['files'];
         unset($_SESSION['files']);
         $serial = 1;
     }else{
     include_once 'db_con.php';
     $conn = connect();
-    $sql = "SELECT * FROM service";
-    $services = $conn -> query ($sql);
+    $sql = "SELECT * FROM rickshaw";
+    $rickshaws = $conn -> query ($sql);
     $serial = 1;
     }
     
@@ -63,25 +63,18 @@ if (!isset($_SESSION['loggedin'])){
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <form  action="form_search.php" method="GET">
+                        <form  action="rickshaw_search.php" method="GET">
                         <strong class="card-title">
                             <label>সেবা সমূহ <span class="required"></span></label>
                                             
                                                 
          <select name="seba_type" class="form-control" required="">
                                                  <option value=""selected="">চিহ্নিত করুন</option>
-                                                    <option value="nagorik_cer" >নাগরিকত্ব সনদ</option>
-                                                    <option value="death_cer">মৃত্যু সনদ</option>
-                                                    <option value="ch_cer">চারিত্রিক সনদ</option>
-                                                    <option value="birth_cer">BIRTH CERTIFICATE</option>
-                                                    <option value="homeless">ভূমিহীন সনদ</option>
+                                                    <option value="rickshaw_cer" >Rickshaw</option>
+                                                    <option value="van_cer">Van</option>
                                                     
-                                                    <option value="disable">প্রকৃত বাকঁ ও শ্রবন প্রতিবন্ধী</option>
-                                                    <option value="hindu">সনাতন ধর্ম  অবলম্বী</option>
-                                                    <option value="permit">অনুমতি পত্র</option>
-                                                    <option value="transcript">প্রত্যয়ন পত্র</option>
-                                                </select></strong>
-                                            <input type="submit" value="Search" />
+                                                </select>                                            
+                                                <input type="submit" value="Search" />
 
     
                       </form>
@@ -91,49 +84,33 @@ if (!isset($_SESSION['loggedin'])){
                             <thead>
                             <tr>
                                 <th class="text-center" style="width: 3px;">Sl</th>
-                                <th>Photo</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
+                                <th>Owner's Photo</th>
+                                <th>Owner's Name</th>
+                                
                                 <th>Father</th>
                                 <th>Mother</th>
-                                <th>Husband/Wife</th>
+                            
                                 <th>NID/Birth Certificate No.</th>
                                 <th>Birth Date</th>
-                                <th>Gender</th>
-                                 <!--<th>Occupassion</th> 
-                                <th>Education Qualification</th>
-                                <th>Religion</th>
-                                <th>Present Village</th> 
-                                <th>Present Ward</th>
-                                <th>Present Upazilla</th>
-                                <th>Present Thana</th>
-                                <th>Present District</th>
-                                <th>Permanent Village</th>
-                                <th>Permanent Ward</th>
-                                <th>Permanent Upazilla</th>
-                                <th>Permanent Thana</th>
-                                <th>Permanent District</th>
-                                <th>Phone</th>
-                                <th>Email</th>
-                                <th>Attachment</th>
-                                <th>Photo</th>-->
+                                <th>Registration Type</th>
+                               
                             </tr>
                             </thead>
                             <tbody>
                                 <?php
-                                    foreach ($services as $service){
+                                    foreach ($rickshaws as $rickshaw){
                                 ?>
                                     <tr>
                                         <td><?= $serial++?></td>
-                                        <td><img  style="height:90px" src="images/application/<?= $service['pic']?>" alt=""></td>
-                                        <td><?= $service['first_name']?></td>
-                                        <td><?= $service['last_name']?></td>
-                                        <td><?= $service['father']?></td>
-                                        <td><?= $service['mother']?></td>
-                                        <td><?= $service['husband_wife']?></td>
-                                        <td><?= $service['nid']?></td>
-                                        <td><?= $service['birth_day']?></td>
-                                        <td><?= $service['gender']?></td>
+                                        <td><img  style="height:90px" src="images/application/rickshaw/<?= $rickshaw['pic']?>" alt=""></td>
+                                        <td><?= $rickshaw['owner_name']?></td>
+                                        
+                                        <td><?= $rickshaw['father']?></td>
+                                        <td><?= $rickshaw['mother']?></td>
+                                        
+                                        <td><?= $rickshaw['nid']?></td>
+                                        <td><?= $rickshaw['dob']?></td>
+                                        <td><?= $rickshaw['reg']?></td>
                                         <!--<td><?= $service['occupation']?></td>
                                         <td><?= $service['education']?></td>
                                         <td><?= $service['relegion']?></td>
@@ -158,23 +135,20 @@ if (!isset($_SESSION['loggedin'])){
 
 
                                     
-                                        <td>
-                                            <a  href="view_form.php?appid=<?=$service['id']?>" class="btn btn-info btn-sm">
+                                      <td>
+                                            <a  href="view_rickshaw_form.php?appid=<?=$rickshaw['id']?>" class="btn btn-info btn-sm">
                                                 <i class="fa fa-edit"></i>View
                                             </a>
 
-                                            <a  href="public_approved.php?appid=<?=$service['id']?>" class="btn btn-success btn-sm">
-                                                <i class="fa fa-correct"></i>Approved
+                                            <a  href="rickshaw_approved.php?appid=<?=$rickshaw['id']?>" class="btn btn-success btn-sm">
+                                                <i class="fa fa-edit"></i>Approved
                                             </a>
 
-                                            <a  href="public_decline.php?appid=<?=$service['id']?>" class="btn btn-danger btn-sm">
+                                            <a  href="rickshaw_decline.php?appid=<?=$rickshaw['id']?>" class="btn btn-danger btn-sm">
                                                 <i class="fa fa-trash"></i>Decline
                                             </a>
-
-
-
-                                            
-                                        </td>
+                                           
+                                        </td> 
                                     </tr>
                                 <?php } ?>
                             </tbody>

@@ -25,6 +25,7 @@ session_start();
 	$conn = connect();
 	
 	$sql = "SELECT * FROM member WHERE Email= '$email' AND Password= '$password'";
+	
 	$result = $conn->query($sql);
 		
 		if($result->num_rows > 0){
