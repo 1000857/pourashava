@@ -1,17 +1,12 @@
-<?php session_start(); ?>
-<?php
-if (!isset($_SESSION['loggedin'])){
-    header('location:signin_form.php');
-    exit;
-}
-?>
+<?php include_once 'temp/header.php'; ?>
+<?php include_once 'temp/nav.php'; ?>
 <?php include_once 'template/_head.php'?>
 
 <body>
 
 
 <!-- Left Panel -->
-<?php include_once 'template/leftNav.php'?>
+
 <!-- Left Panel -->
 
 <!-- Right Panel -->
@@ -19,14 +14,14 @@ if (!isset($_SESSION['loggedin'])){
 <div id="right-panel" class="right-panel">
 
     <!-- Header-->
-    <?php include_once 'template/header.php'?>
+    
     <!-- Header-->
 
     <div class="breadcrumbs">
         <div class="col-sm-4">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>Form management</h1>
+                    <h1>Doctor List</h1>
                 </div>
             </div>
         </div>
@@ -62,30 +57,7 @@ if (!isset($_SESSION['loggedin'])){
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
-                        <form  action="form_search.php" method="GET">
-                        <strong class="card-title">
-                            <label>সেবা সমূহ <span class="required"></span></label>
-                                            
-                                                
-         <select name="seba_type" class="form-control" required="">
-                                                 <option value=""selected="">চিহ্নিত করুন</option>
-                                                    <option value="nagorik_cer" >নাগরিকত্ব সনদ</option>
-                                                    <option value="death_cer">মৃত্যু সনদ</option>
-                                                    <option value="ch_cer">চারিত্রিক সনদ</option>
-                                                    <option value="birth_cer">BIRTH CERTIFICATE</option>
-                                                    <option value="homeless">ভূমিহীন সনদ</option>
-                                                    
-                                                    <option value="disable">প্রকৃত বাকঁ ও শ্রবন প্রতিবন্ধী</option>
-                                                    <option value="hindu">সনাতন ধর্ম  অবলম্বী</option>
-                                                    <option value="permit">অনুমতি পত্র</option>
-                                                    <option value="transcript">প্রত্যয়ন পত্র</option>
-                                                </select></strong>
-                                            <input type="submit" value="Search" />
-
-    
-                      </form>
-                    </div>
+                    
                     <div class="card-body text-center">
                         <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                             <thead>
@@ -96,12 +68,27 @@ if (!isset($_SESSION['loggedin'])){
                                 <th>Last Name</th>
                                 <th>Father</th>
                                 <th>Mother</th>
-                                
+                                <th>Husband/Wife</th>
                                 <th>NID/Birth Certificate No.</th>
                                 <th>Birth Date</th>
                                 <th>Gender</th>
-                                <th>Status</th>
-                                 
+                                 <!--<th>Occupassion</th> 
+                                <th>Education Qualification</th>
+                                <th>Religion</th>
+                                <th>Present Village</th> 
+                                <th>Present Ward</th>
+                                <th>Present Upazilla</th>
+                                <th>Present Thana</th>
+                                <th>Present District</th>
+                                <th>Permanent Village</th>
+                                <th>Permanent Ward</th>
+                                <th>Permanent Upazilla</th>
+                                <th>Permanent Thana</th>
+                                <th>Permanent District</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th>Attachment</th>
+                                <th>Photo</th>-->
                             </tr>
                             </thead>
                             <tbody>
@@ -115,22 +102,10 @@ if (!isset($_SESSION['loggedin'])){
                                         <td><?= $service['last_name']?></td>
                                         <td><?= $service['father']?></td>
                                         <td><?= $service['mother']?></td>
-                                        
+                                        <td><?= $service['husband_wife']?></td>
                                         <td><?= $service['nid']?></td>
                                         <td><?= $service['birth_day']?></td>
                                         <td><?= $service['gender']?></td>
-                                        <td>
-                                        <?php 
-                                            if ($service['is_approved'] == '1') {
-                                                echo "Approved";
-                                            } elseif ($service['is_approved'] == '0') {
-                                                echo "Declined";
-                                            } elseif ($service['is_approved'] == "") {
-                                                echo "Pending";
-                                            } 
-                                        ?>
-                                            
-                                        </td>
                                         <!--<td><?= $service['occupation']?></td>
                                         <td><?= $service['education']?></td>
                                         <td><?= $service['relegion']?></td>
@@ -181,11 +156,7 @@ if (!isset($_SESSION['loggedin'])){
             </div>
         </div>
 
-        <!--/.col-->
-
-
-    </div> <!-- .content -->
-</div><!-- /#right-panel -->
+    
 
 <!-- Right Panel -->
-<?php include_once 'template/footer.php'?>
+<?php include_once 'temp/footer.php'; ?>

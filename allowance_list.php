@@ -26,7 +26,7 @@ if (!isset($_SESSION['loggedin'])){
         <div class="col-sm-4">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>Rickshaw/Van Registration Form</h1>
+                    <h1>Allowance Applicant List</h1>
                 </div>
             </div>
         </div>
@@ -45,16 +45,14 @@ if (!isset($_SESSION['loggedin'])){
 <?php 
                                     
     if(isset($_SESSION['files'])){
-        $rickshaws = $_SESSION['files'];
+        $services = $_SESSION['files'];
         unset($_SESSION['files']);
         $serial = 1;
     }else{
     include_once 'db_con.php';
     $conn = connect();
-    $sql = "SELECT * FROM rickshaw";
-   
-    $rickshaws = $conn -> query ($sql);
-    
+    $sql = "SELECT * FROM allowance";
+    $services = $conn -> query ($sql);
     $serial = 1;
     }
     
@@ -64,68 +62,94 @@ if (!isset($_SESSION['loggedin'])){
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
-                        <form  action="rickshaw_search.php" method="GET">
+                    
+                    <form action="allowance_confirm.php" method="POST">
+                        <div class="card-header">
+                        
                         <strong class="card-title">
-                            <label>সেবা সমূহ <span class="required"></span></label>
+                            <label>MONTH <span class="required"></span></label>
                                             
                                                 
-         <select name="seba_type" class="form-control" required="">
-                                                 <option value=""selected="">চিহ্নিত করুন</option>
-                                                    <option value="rickshaw_cer" >Rickshaw</option>
-                                                    <option value="van_cer">Van</option>
-                                                    
-                                                </select>                                            
-                                                <input type="submit" value="Search" />
-
-    
-                      </form>
+                    <select name="month" class="field-divided" required="">
+                             <option value=""selected="">SELECT</option>
+                                <option value="January" >January</option>
+                                <option value="February">February</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                
+                                <option value="June">June</option>
+                                <option value="July">July</option>
+                                <option value="August">August</option>
+                                <option value="September">September</option>
+                                <option value="October">October</option>
+                                <option value="November">November</option>
+                                <option value="December">December</option>
+                                
+                            </select></br>
+                        
+                            <label>Amount:<span class="required">*</span></label>
+                            <input type="number" name="amount" class="field-long" placeholder="Insert Amount" /></br></strong>
+        
+                      
+                        
+                    
                     </div>
+                        
+
                     <div class="card-body text-center">
+                        
+
                         <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                             <thead>
                             <tr>
                                 <th class="text-center" style="width: 3px;">Sl</th>
-                                <th>Owner's Photo</th>
-                                <th>Owner's Name</th>
-                                
+                                <th>Action</th>
+                                <th>Allowance Type</th>
+                                <th>Month</th>
+                                <th>Name</th>
                                 <th>Father</th>
-                               
-                            
                                 <th>NID/Birth Certificate No.</th>
                                 <th>Birth Date</th>
-                                <th>Registration Type</th>
-                                 <th>Status</th>
-                               
+                                <th>Status</th>
+                                
                             </tr>
                             </thead>
                             <tbody>
                                 <?php
-                                    foreach ($rickshaws as $rickshaw){
+                                    foreach ($services as $service){
                                 ?>
                                     <tr>
                                         <td><?= $serial++?></td>
-                                        <td><img  style="height:90px" src="images/application/rickshaw/<?= $rickshaw['pic']?>" alt=""></td>
-                                        <td><?= $rickshaw['owner_name']?></td>
-                                        
-                                        <td><?= $rickshaw['father']?></td>
-                                       
-                                        
-                                        <td><?= $rickshaw['nid']?></td>
-                                        <td><?= $rickshaw['dob']?></td>
-                                        <td><?= $rickshaw['reg']?></td>
                                         <td>
-                                        <?php 
-                                            if ($rickshaw['is_approved'] == '1') {
+                                           
+                                              <input type="checkbox" id="allowance" name="allow[ ]" value=" <?=$service['id']?> "></br>Approved for Allowance<br>
+                                              
+                                           
+                                            </td>
+
+                                       
+                                        <td><?= $service['service_name']?></td>
+                                        <td><?= $service['month']?></td>
+                                        <td><?= $service['first_name']?> <?= $service['last_name']?></td>
+                                        
+                                        <td><?= $service['father']?></td>
+                                        
+                                        
+                                        <td><?= $service['nid']?></td>
+                                        <td><?= $service['dob']?></td>
+                                        <td><?php 
+                                            if ($service['is_approved'] == '1') {
                                                 echo "Approved";
-                                            } elseif ($rickshaw['is_approved'] == '0') {
+                                            } elseif ($service['is_approved'] == '0') {
                                                 echo "Declined";
-                                            } elseif ($rickshaw['is_approved'] == "") {
+                                            } elseif ($service['is_approved'] == "") {
                                                 echo "Pending";
                                             } 
-                                        ?>
-                                            
-                                        </td>
+                                        ?></td>
+                                         
+
+
                                         <!--<td><?= $service['occupation']?></td>
                                         <td><?= $service['education']?></td>
                                         <td><?= $service['relegion']?></td>
@@ -150,24 +174,30 @@ if (!isset($_SESSION['loggedin'])){
 
 
                                     
-                                      <td>
-                                            <a  href="view_rickshaw_form.php?appid=<?=$rickshaw['id']?>" class="btn btn-info btn-sm">
+                                        <!--<td>
+                                            <a  href="view_allowance.php?appid=<?=$service['id']?>" class="btn btn-info btn-sm">
                                                 <i class="fa fa-edit"></i>View
                                             </a>
 
-                                            <a  href="rickshaw_approved.php?appid=<?=$rickshaw['id']?>" class="btn btn-success btn-sm">
-                                                <i class="fa fa-edit"></i>Approved
+                                            <a  href="trade_license_approved.php?appid=<?=$service['id']?>" class="btn btn-success btn-sm">
+                                                <i class="fa fa-correct"></i>Approved
                                             </a>
 
-                                            <a  href="rickshaw_decline.php?appid=<?=$rickshaw['id']?>" class="btn btn-danger btn-sm">
+                                            <a  href="trade_license_decline.php?appid=<?=$service['id']?>" class="btn btn-danger btn-sm">
                                                 <i class="fa fa-trash"></i>Decline
                                             </a>
-                                           
-                                        </td> 
+
+
+
+                                            
+                                        </td>-->
                                     </tr>
+                                 </form>
                                 <?php } ?>
                             </tbody>
                         </table>
+                        
+    <input class="btn btn-success btn-sm" type="submit" name="Submit" value="Submit" />
                     </div>
                 </div>
             </div>

@@ -16,14 +16,14 @@
                     <a href="dashboard.php"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                 </li>
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>Manage Student</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>Humanitarian Allowance</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-list"></i><a href="student_index.php">All Students</a></li>
-                        <li><i class="fa fa-plus-circle"></i><a href="student_create.php">Add Students</a></li>
+                        <li><i class="fa fa-list"></i><a href="allowance_form.php">Allowance Form</a></li>
+                        <li><i class="fa fa-plus-circle"></i><a href="allowance_list.php">Allowance List</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="department_index.php"> <i class="menu-icon fa fa-building"></i>Manage Departments</a>
+                    <a href="department_index.php"> <i class="menu-icon fa fa-building"></i>Humanitarian Allowance</a>
                 </li>
                 <li >
                     <a href="batch_index.php"> <i class="menu-icon fa fa-tasks"></i>Manage Batches</a>
@@ -36,6 +36,8 @@
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="fa fa-list"></i><a href="application_list.php">Public Applications</a></li>
                         <li><i class="fa fa-eye"></i><a href="rickshaw_list.php">Rickshaw</a></li>
+                        <li><i class="fa fa-eye"></i><a href="trade_license_list.php">Trade License</a></li>
+                        <li><i class="fa fa-eye"></i><a href="house_permission_list.php">House/Building Permission</a></li>
                     </ul>
                 </li>
 

@@ -143,6 +143,50 @@ echo $number;
 <br/><br/><br/><br/><br/>
      <span style="font-size:15px; font-style: italic;">SIGN OF UP SECRETARY</span>
        <span style="font-size:15px; margin-left:400px; font-style: italic;">SIGN OF MAYOR</span>
+       <?php } elseif ($rickshaw['service_type'] == 'van_cer') { ?> </br>
+       <img  style="height:190px" src="images/application/rickshaw/<?= $rickshaw['pic']?>" alt=""></span>
+<br/>
+
+       <span style="font-size:20px"; >NUMBER: 
+         <?php
+         $number =  random_int(10000, 10000000);
+echo $number;
+?>
+                                        
+  
+</span>
+<br/>
+ 
+ <span style="font-size:20px"; >NAME: <?= $rickshaw['owner_name']?> </span>
+<br/>
+
+ <span style="font-size:20px"; >BIRTH: <?= $rickshaw['dob']?></span>
+<br/>
+
+
+
+<span style="font-size:20px"; >NATIONALITY: BANGLADESHI</span>
+<br/>
+
+ <span style="font-size:20px";>PERMANENT ADDRESS: <?= $rickshaw['permanent_address']?></span>
+<br/>
+
+ <span style="font-size:20px";>FATHER NAME: <?= $rickshaw['father']?></span>
+<br/>
+
+<span style="font-size:20px"; >NATIONALITY: BANGLADESHI</span>
+<br/>
+
+ <span style="font-size:20px"; >MOTHER NAME: <?= $rickshaw['mother']?></span>
+<br/>
+
+<span style="font-size:20px";  >NATIONALITY: BANGLADESHI</span>
+<br/>
+
+ <span style="font-size:20px";>PRESENT ADDRESS: <?= $rickshaw['present_address']?></span>
+<br/><br/><br/><br/><br/>
+     <span style="font-size:15px; font-style: italic;">SIGN OF UP SECRETARY</span>
+       <span style="font-size:15px; margin-left:400px; font-style: italic;">SIGN OF MAYOR</span>
        <?php } ?>
    </div>
 </div>

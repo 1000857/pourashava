@@ -26,7 +26,7 @@ if (!isset($_SESSION['loggedin'])){
         <div class="col-sm-4">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>Rickshaw/Van Registration Form</h1>
+                    <h1>House/Building Permission Applicant List</h1>
                 </div>
             </div>
         </div>
@@ -45,16 +45,14 @@ if (!isset($_SESSION['loggedin'])){
 <?php 
                                     
     if(isset($_SESSION['files'])){
-        $rickshaws = $_SESSION['files'];
+        $services = $_SESSION['files'];
         unset($_SESSION['files']);
         $serial = 1;
     }else{
     include_once 'db_con.php';
     $conn = connect();
-    $sql = "SELECT * FROM rickshaw";
-   
-    $rickshaws = $conn -> query ($sql);
-    
+    $sql = "SELECT * FROM house";
+    $services = $conn -> query ($sql);
     $serial = 1;
     }
     
@@ -65,18 +63,19 @@ if (!isset($_SESSION['loggedin'])){
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <form  action="rickshaw_search.php" method="GET">
+                        <form  action="form_search.php" method="GET">
                         <strong class="card-title">
                             <label>সেবা সমূহ <span class="required"></span></label>
                                             
                                                 
          <select name="seba_type" class="form-control" required="">
                                                  <option value=""selected="">চিহ্নিত করুন</option>
-                                                    <option value="rickshaw_cer" >Rickshaw</option>
-                                                    <option value="van_cer">Van</option>
+                                                    <option value="residence" >Residential </option>
+                                                    <option value="business">Business</option>
+                                                    <option value="industry">Industrial</option>
                                                     
-                                                </select>                                            
-                                                <input type="submit" value="Search" />
+                                                </select></strong>
+                                            <input type="submit" value="Search" />
 
     
                       </form>
@@ -86,46 +85,65 @@ if (!isset($_SESSION['loggedin'])){
                             <thead>
                             <tr>
                                 <th class="text-center" style="width: 3px;">Sl</th>
-                                <th>Owner's Photo</th>
-                                <th>Owner's Name</th>
-                                
-                                <th>Father</th>
+                                <th>Photo</th>
+                                <th>Building Type</th>
+                                <th>Applicants Name</th>
                                
-                            
+                                <th>Father</th>
+                                
+                                
                                 <th>NID/Birth Certificate No.</th>
                                 <th>Birth Date</th>
-                                <th>Registration Type</th>
-                                 <th>Status</th>
-                               
+                                <th>Status</th>
+                                
+                                 <!--<th>Occupassion</th> 
+                                <th>Education Qualification</th>
+                                <th>Religion</th>
+                                <th>Present Village</th> 
+                                <th>Present Ward</th>
+                                <th>Present Upazilla</th>
+                                <th>Present Thana</th>
+                                <th>Present District</th>
+                                <th>Permanent Village</th>
+                                <th>Permanent Ward</th>
+                                <th>Permanent Upazilla</th>
+                                <th>Permanent Thana</th>
+                                <th>Permanent District</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th>Attachment</th>
+                                <th>Photo</th>-->
                             </tr>
                             </thead>
                             <tbody>
                                 <?php
-                                    foreach ($rickshaws as $rickshaw){
+                                    foreach ($services as $service){
                                 ?>
                                     <tr>
                                         <td><?= $serial++?></td>
-                                        <td><img  style="height:90px" src="images/application/rickshaw/<?= $rickshaw['pic']?>" alt=""></td>
-                                        <td><?= $rickshaw['owner_name']?></td>
+                                        <td><img  style="height:90px" src="images/application/house/<?= $service['pic']?>" alt=""></td>
+                                        <td><?= $service['type']?></td>
+                                        <td><?= $service['name']?></td>
                                         
-                                        <td><?= $rickshaw['father']?></td>
-                                       
+                                        <td><?= $service['father']?></td>
                                         
-                                        <td><?= $rickshaw['nid']?></td>
-                                        <td><?= $rickshaw['dob']?></td>
-                                        <td><?= $rickshaw['reg']?></td>
+                                        
+                                        <td><?= $service['nid']?></td>
+                                        <td><?= $service['dob']?></td>
                                         <td>
                                         <?php 
-                                            if ($rickshaw['is_approved'] == '1') {
+                                            if ($service['is_approved'] == '1') {
                                                 echo "Approved";
-                                            } elseif ($rickshaw['is_approved'] == '0') {
+                                            } elseif ($service['is_approved'] == '0') {
                                                 echo "Declined";
-                                            } elseif ($rickshaw['is_approved'] == "") {
+                                            } elseif ($service['is_approved'] == "") {
                                                 echo "Pending";
                                             } 
                                         ?>
                                             
                                         </td>
+
+
                                         <!--<td><?= $service['occupation']?></td>
                                         <td><?= $service['education']?></td>
                                         <td><?= $service['relegion']?></td>
@@ -150,20 +168,23 @@ if (!isset($_SESSION['loggedin'])){
 
 
                                     
-                                      <td>
-                                            <a  href="view_rickshaw_form.php?appid=<?=$rickshaw['id']?>" class="btn btn-info btn-sm">
+                                        <td>
+                                            <a  href="view_house_permission.php?appid=<?=$service['id']?>" class="btn btn-info btn-sm">
                                                 <i class="fa fa-edit"></i>View
                                             </a>
 
-                                            <a  href="rickshaw_approved.php?appid=<?=$rickshaw['id']?>" class="btn btn-success btn-sm">
-                                                <i class="fa fa-edit"></i>Approved
+                                            <a  href="house_permission_approved.php?appid=<?=$service['id']?>" class="btn btn-success btn-sm">
+                                                <i class="fa fa-correct"></i>Approved
                                             </a>
 
-                                            <a  href="rickshaw_decline.php?appid=<?=$rickshaw['id']?>" class="btn btn-danger btn-sm">
+                                            <a  href="house_permission_decline.php?appid=<?=$service['id']?>" class="btn btn-danger btn-sm">
                                                 <i class="fa fa-trash"></i>Decline
                                             </a>
-                                           
-                                        </td> 
+
+
+
+                                            
+                                        </td>
                                     </tr>
                                 <?php } ?>
                             </tbody>
