@@ -9,8 +9,9 @@
   <!-- ################################################################################################ -->
   <div id="pageintro" class="hoc clear"> 
     <!-- ################################################################################################ -->
+    <img src="images/1.jpg" alt="">
     <article>
-      <h3 class="heading">Senectus et netus</h3>
+      <h3 class="heading">Daudkandi Pourashava</h3>
       <p>Et malesuada fames ac turpis egestas duis rutrum eros ut sapien in hac habitasse platea dictumst aliquam venenatis leo et orci ut pretium odio eu nisi nulla at.</p>
       <footer>
         <ul class="nospace inline pushright">
@@ -34,17 +35,17 @@
     <section id="introblocks">
       <ul class="nospace group grid-3">
         <li class="one_third">
-          <figure><a class="imgover" href="#"><img src="images/demo/348x220.png" alt=""></a>
+          <figure><a class="imgover" href="#"><img src="images/1.jpg" alt=""></a>
             <figcaption><a href="#">Aliquam faucibus</a></figcaption>
           </figure>
         </li>
         <li class="one_third">
-          <figure><a class="imgover" href="#"><img src="images/demo/348x220.png" alt=""></a>
+          <figure><a class="imgover" href="#"><img src="images/1.jpg" alt=""></a>
             <figcaption><a href="#">Aliquam faucibus</a></figcaption>
           </figure>
         </li>
         <li class="one_third">
-          <figure><a class="imgover" href="#"><img src="images/demo/348x220.png" alt=""></a>
+          <figure><a class="imgover" href="#"><img src="images/1.jpg" alt=""></a>
             <figcaption><a href="#">Aliquam faucibus</a></figcaption>
           </figure>
         </li>
@@ -75,7 +76,7 @@
         </li>
       </ul>
     </figure>
-    <div class="one_half last"><a class="imgover" href="#"><img src="images/demo/480x300.png" alt=""></a></div>
+    <div class="one_half last"><a class="imgover" href="#"><img src="images/1.jpg" alt=""></a></div>
     <!-- ################################################################################################ -->
   </section>
 </div>
@@ -149,12 +150,12 @@
     <figure>
       <figcaption class="center btmspace-50"><a href="#">Pharetra</a> / <a href="#">Imperdiet</a> / <a href="#">Suspendisse</a> / <a href="#">Potenti</a></figcaption>
       <ul class="nospace group grid-3">
-        <li class="one_third"><a class="imgover" href="#"><img src="images/demo/348x261.png" alt=""></a></li>
-        <li class="one_third"><a class="imgover" href="#"><img src="images/demo/348x261.png" alt=""></a></li>
-        <li class="one_third"><a class="imgover" href="#"><img src="images/demo/348x261.png" alt=""></a></li>
-        <li class="one_third"><a class="imgover" href="#"><img src="images/demo/348x261.png" alt=""></a></li>
-        <li class="one_third"><a class="imgover" href="#"><img src="images/demo/348x261.png" alt=""></a></li>
-        <li class="one_third"><a class="imgover" href="#"><img src="images/demo/348x261.png" alt=""></a></li>
+        <li class="one_third"><a class="imgover" href="#"><img src="images/1.jpg" alt=""></a></li>
+        <li class="one_third"><a class="imgover" href="#"><img src="images/1.jpg" alt=""></a></li>
+        <li class="one_third"><a class="imgover" href="#"><img src="images/1.jpg" alt=""></a></li>
+        <li class="one_third"><a class="imgover" href="#"><img src="images/1.jpg" alt=""></a></li>
+        <li class="one_third"><a class="imgover" href="#"><img src="images/1.jpg" alt=""></a></li>
+        <li class="one_third"><a class="imgover" href="#"><img src="images/1.jpg" alt=""></a></li>
       </ul>
     </figure>
     <!-- ################################################################################################ -->
@@ -188,7 +189,7 @@
     <ul id="latest" class="nospace group sd-third">
       <li class="one_third first">
         <article>
-          <figure><a class="imgover" href="#"><img src="images/demo/348x261.png" alt=""></a>
+          <figure><a class="imgover" href="#"><img src="images/1.jpg" alt=""></a>
             <figcaption>
               <h6 class="heading">Nisl nullam odio justo pharetra</h6>
               <ul class="nospace meta clear">

@@ -13,7 +13,7 @@ foreach($allowances as $allowance)  {
   $in_ch=mysqli_query($conn,"insert into allowance_confirmed(applicant_id, month, amount) values ('$allowance', '$month', '$amount')");   
   
             $_SESSION['msg']= 'Success<br>';
-            header('location:allowance_list.php');
+            header('location:allowance_confirmed_list.php');
 }  
 
 
