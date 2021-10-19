@@ -8,7 +8,6 @@ if($_POST){
     $mother      = $_POST['mother'];
     $nid      = $_POST['nid'];
     $dob      = $_POST['dob'];
-    
     $address      = $_POST['address'];
     $area      = $_POST['area'];
     $ward      = $_POST['ward'];
@@ -18,10 +17,9 @@ if($_POST){
     $floor      = $_POST['floor'];
     $upazilla      = $_POST['upazilla'];
     $district      = $_POST['district'];
-   
     $email       = $_POST['email'];
     $phone      = $_POST['phone'];
-    
+    $id = $_POST['uid'];
     
 
 
@@ -188,8 +186,8 @@ if($_POST){
         $conn = connect();
 
        
-            $sql="INSERT INTO house (type, name, father, mother, nid, dob,address, area, ward, record, mouja, land, floor, upazilla, district, email, phone,  pic  )
-                VALUES ('$seba_type', '$owner_name', '$father', '$mother', '$nid', '$dob', '$address', '$area','$ward','$record','$mouja','$land','$floor','$upazilla','$district','$email','$phone','$fileName')";
+            $sql="INSERT INTO house (type, name, father, mother, nid, dob,address, area, ward, record, mouja, land, floor, upazilla, district, email, phone,  pic, user_id)
+                VALUES ('$seba_type', '$owner_name', '$father', '$mother', '$nid', '$dob', '$address', '$area','$ward','$record','$mouja','$land','$floor','$upazilla','$district','$email','$phone','$fileName', '$id')";
 
 
             $conn->query($sql);

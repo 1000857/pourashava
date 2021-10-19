@@ -1,21 +1,21 @@
 <?php
 
 session_start();
+
 if($_POST){
     $seba_type      = $_POST['seba_type'];
     $owner_name      = $_POST['owner_name'];
     $father      = $_POST['father'];
     $mother      = $_POST['mother'];
-;
     $nid      = $_POST['nid'];
     $dob      = $_POST['dob'];
     $reg      = $_POST['reg'];
     $present_address      = $_POST['present_address'];
     $permanent_address      = $_POST['permanent_address'];
    
-   
     $email       = $_POST['email'];
     $phone      = $_POST['phone'];
+    $id = $_POST['uid'];
     
     
 
@@ -150,8 +150,8 @@ if($_POST){
         $conn = connect();
 
        
-            $sql="INSERT INTO rickshaw (service_type, owner_name, father, mother, nid, dob,reg, present_address, permanent_address, phone, email, pic  )
-                VALUES ('$seba_type', '$owner_name', '$father', '$mother', '$nid', '$dob', '$reg', '$present_address','$permanent_address','$phone','$email','$fileName')";
+            $sql="INSERT INTO rickshaw (service_type, owner_name, father, mother, nid, dob,reg, present_address, permanent_address, phone, email, pic, user_id  )
+                VALUES ('$seba_type', '$owner_name', '$father', '$mother', '$nid', '$dob', '$reg', '$present_address','$permanent_address','$phone','$email','$fileName','$id')";
 
 
             $conn->query($sql);

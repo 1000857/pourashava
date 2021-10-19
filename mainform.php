@@ -27,7 +27,7 @@ if($_POST){
     $email       = $_POST['email'];
     $phone      = $_POST['phone'];
     $other       = $_POST['other'];
-    
+    $id = $_POST['uid'];
 
 
     if($seba_type == ''){
@@ -224,8 +224,8 @@ if($_POST){
         $conn = connect();
 
        
-            $sql="INSERT INTO service (service_name, nid, birth_day, first_name, last_name, gender, father, mother, husband_wife, occupation, education, relegion, present_village, present_ward, present_thana, present_upozilla, present_district, permanent_village, permanent_ward, permanent_thana, permanent_upozilla, permanent_district, mobile, email, other, pic  )
-				VALUES ('$seba_type', '$nid', '$dob', '$fname', '$lname', '$gender', '$father', '$mother','$spouse', '$job', '$education', '$religion', '$village', '$ward', '$thana', '$upazilla', '$district', '$permanent_village', '$permanent_ward', '$permanent_thana', '$permanent_upazilla', '$permanent_district', '$phone','$email', '$other', '$fileName')";
+            $sql="INSERT INTO service (service_name, nid, birth_day, first_name, last_name, gender, father, mother, husband_wife, occupation, education, relegion, present_village, present_ward, present_thana, present_upozilla, present_district, permanent_village, permanent_ward, permanent_thana, permanent_upozilla, permanent_district, mobile, email, other, pic, user_id  )
+				VALUES ('$seba_type', '$nid', '$dob', '$fname', '$lname', '$gender', '$father', '$mother','$spouse', '$job', '$education', '$religion', '$village', '$ward', '$thana', '$upazilla', '$district', '$permanent_village', '$permanent_ward', '$permanent_thana', '$permanent_upazilla', '$permanent_district', '$phone','$email', '$other', '$fileName', '$id')";
 
 
             $conn->query($sql);

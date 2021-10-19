@@ -1,6 +1,8 @@
 <?php include_once 'temp/header.php'; ?>
 <?php include_once 'temp/nav.php'; ?>
 
+
+
 <div class="container">
     <div class="main-body">
     
@@ -24,8 +26,8 @@
                       <h4>John Doe</h4>
                       <p class="text-secondary mb-1">Full Stack Developer</p>
                       <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
-                      <button class="btn btn-primary">Follow</button>
-                      <button class="btn btn-warning">Message</button>
+                      <!-- <button class="btn btn-primary">Follow</button> 
+                      <button class="btn btn-warning">Message</button>-->
                     </div>
                   </div>
                 </div>
@@ -107,31 +109,89 @@
                   </div>
                 </div>
               </div>
+      <?php
+          include_once 'db_con.php';
+          $conn = connect();
+          $uid = $_SESSION['user_id'];
 
+          $sql = "SELECT * FROM service WHERE user_id= '$uid'";
+          $services = $conn -> query ($sql);
+
+          $sql1 = "SELECT * FROM rickshaw WHERE user_id= '$uid'";
+          $services1 = $conn -> query ($sql);
+
+          $sql2 = "SELECT * FROM house WHERE user_id= '$uid'";
+          $services2 = $conn -> query ($sql);
+
+          $sql3 = "SELECT * FROM trade WHERE user_id= '$uid'";
+          $services3 = $conn -> query ($sql);
+          
+          $serial = 1;
+          
+      ?>
               <div class="row gutters-sm">
-                <div class="col-sm-6 mb-3">
+                <div class="col-sm-12 mb-6">
                   <div class="card h-100">
                     <div class="card-body">
                       <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">assignment</i>Project Status</h6>
-                      <small>Web Design</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>Website Markup</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>One Page</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 89%" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>Mobile Template</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <small>Backend API</small>
-                      <div class="progress mb-3" style="height: 5px">
-                        <div class="progress-bar bg-primary" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
+                      
+
+                      <div class="card-body text-center">
+                        <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+                            <thead>
+                            <tr>
+                               
+                                
+                                <th>SL</th>
+                                <th>APPLICATION TYPE</th>
+                                <th>STATUS</th>
+                                
+                                 
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                    foreach ($services as $service){
+                                ?>
+                                    <tr>
+                                        <td><?= $serial++?></td>
+                                        <td><?= $service['service_name']?></td>
+                                        <td> <?php 
+                                            if ($service['is_approved'] == '1') {
+                                                echo "Approved";
+                                            } elseif ($service['is_approved'] == '0') {
+                                                echo "Declined";
+                                            } elseif ($service['is_approved'] == "") {
+                                                echo "Pending";
+                                            } 
+                                        ?></td>
+                                        
+
+                                    </tr>
+                                <?php } ?>
+
+                                <?php
+                                    foreach ($services1 as $service1){
+                                ?>
+                                    <tr>
+                                        <td><?= $serial++?></td>
+                                        <td><?= $service1['service_type']?></td>
+                                        <td> <?php 
+                                            if ($service1['is_approved'] == '1') {
+                                                echo "Approved";
+                                            } elseif ($service1['is_approved'] == '0') {
+                                                echo "Declined";
+                                            } elseif ($service1['is_approved'] == "") {
+                                                echo "Pending";
+                                            } 
+                                        ?></td>
+
+                                    </tr>
+                                <?php } ?>
+
+                            </tbody>
+                        </table>
+                    </div>
                       </div>
                     </div>
                   </div>

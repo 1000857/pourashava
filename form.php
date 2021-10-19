@@ -10,6 +10,15 @@
             unset ($_SESSION['msg']);
         }
     ?>
+     <?php
+    include_once 'db_con.php';
+    $conn = connect();
+    $user_id = $_SESSION['user_id'];
+    $sql = "SELECT * FROM member WHERE id =$user_id";
+    $result = $conn -> query ($sql);
+    $user = $result -> fetch_assoc();
+
+    ?>
 <form action="mainform.php" method="POST" enctype="multipart/form-data">
 <ul class="form-style-1">
     <li><label>সেবা সমূহ <span class="required">*</span></label>
@@ -160,6 +169,7 @@
         <label>Passport Size Photo <span class="required">*</span></label>
         <input type="file" name="photo" id="photo" class="field-long" />
     </li>
+        <input type="hidden" name="uid" value="<?= $user['id']?>" />
     <li>
         <input type="submit" value="Submit" />
     </li>

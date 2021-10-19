@@ -783,7 +783,7 @@ select{
 
 /*profile*/
 body{
-    margin-top:20px;
+    margin-top:0px;
     color: #1a202c;
     text-align: left;
     background-color: #e2e8f0;    
@@ -811,7 +811,7 @@ body{
 .card-body {
     flex: 1 1 auto;
     min-height: 1px;
-    padding: 1rem;
+    padding: 6rem;
 }
 
 .gutters-sm {
