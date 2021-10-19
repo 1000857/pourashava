@@ -249,16 +249,17 @@ h6 {
    ========================================================================== */
 .btn {
   display: inline-block;
-  line-height: 50px;
-  padding: 0 50px;
+  
   -webkit-transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   transition: all 0.4s ease;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 11px;
   color: #fff;
   font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+  height: 22px;
+    width: 51px;
 }
 
 .btn--radius {

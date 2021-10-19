@@ -118,13 +118,13 @@
           $services = $conn -> query ($sql);
 
           $sql1 = "SELECT * FROM rickshaw WHERE user_id= '$uid'";
-          $services1 = $conn -> query ($sql);
+          $services1 = $conn -> query ($sql1);
 
           $sql2 = "SELECT * FROM house WHERE user_id= '$uid'";
-          $services2 = $conn -> query ($sql);
+          $services2 = $conn -> query ($sql2);
 
           $sql3 = "SELECT * FROM trade WHERE user_id= '$uid'";
-          $services3 = $conn -> query ($sql);
+          $services3 = $conn -> query ($sql3);
           
           $serial = 1;
           
@@ -145,6 +145,7 @@
                                 <th>SL</th>
                                 <th>APPLICATION TYPE</th>
                                 <th>STATUS</th>
+                                <th>ACTION</th>
                                 
                                  
                             </tr>
@@ -166,6 +167,17 @@
                                             } 
                                         ?></td>
                                         
+                                          <?php 
+                                          if ($service['is_approved'] =='1'){ 
+                                            ?>
+                                            
+                                          <td>
+                                          <a  href="view_form.php?appid=<?=$service['id']?>" class="btn btn-info btn-sm">
+                                                <i class="fa fa-edit"></i>View
+                                            </a>
+
+                                          </td>
+                                        <?php }?>
 
                                     </tr>
                                 <?php } ?>
@@ -186,6 +198,66 @@
                                             } 
                                         ?></td>
 
+                                        <?php 
+                                          if ($service1['is_approved'] =='1'){ 
+                                            ?>
+                                        <td><a  href="view_rickshaw_form.php?appid=<?=$service1['id']?>" class="btn btn-info btn-sm">
+                                                <i class="fa fa-edit"></i>View
+                                            </a></td>
+                                            <?php }?>
+
+                                    </tr>
+                                <?php } ?>
+
+                                 <?php
+                                    foreach ($services2 as $service2){
+                                ?>
+                                    <tr>
+                                        <td><?= $serial++?></td>
+                                        <td><?= $service2['type']?></td>
+                                        <td> <?php 
+                                            if ($service2['is_approved'] == '1') {
+                                                echo "Approved";
+                                            } elseif ($service2['is_approved'] == '0') {
+                                                echo "Declined";
+                                            } elseif ($service2['is_approved'] == "") {
+                                                echo "Pending";
+                                            } 
+                                        ?></td>
+
+                                        <?php 
+                                          if ($service2['is_approved'] =='1'){ 
+                                            ?>
+                                        <td><a  href="view_house_permission.php?appid=<?=$service2['id']?>" class="btn btn-info btn-sm">
+                                                <i class="fa fa-edit"></i>View
+                                            </a></td>
+                                            <?php } ?>
+                                    </tr>
+                                <?php } ?>
+
+                                <?php
+                                    foreach ($services3 as $service3){
+                                ?>
+                                    <tr>
+                                        <td><?= $serial++?></td>
+                                        <td><?= $service3['type']?></td>
+                                        <td> <?php 
+                                            if ($service3['is_approved'] == '1') {
+                                                echo "Approved";
+                                            } elseif ($service3['is_approved'] == '0') {
+                                                echo "Declined";
+                                            } elseif ($service3['is_approved'] == "") {
+                                                echo "Pending";
+                                            } 
+                                        ?></td>
+
+                                         <?php 
+                                          if ($service3['is_approved'] =='1'){ 
+                                            ?>
+                                        <td><a  href="view_trade_license.php?appid=<?=$service3['id']?>" class="btn btn-info btn-sm">
+                                                <i class="fa fa-edit"></i>View
+                                            </a></td>
+                                            <?php } ?>
                                     </tr>
                                 <?php } ?>
 
