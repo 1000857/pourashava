@@ -26,7 +26,7 @@ if (!isset($_SESSION['loggedin'])){
         <div class="col-sm-4">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>Allowance Confirmation List</h1>
+                    <h1>Salary Confirmation List</h1>
                 </div>
             </div>
         </div>
@@ -51,15 +51,15 @@ if (!isset($_SESSION['loggedin'])){
     }else{
     include_once 'db_con.php';
     $conn = connect();
-    $sql = "SELECT allowance.id as id, allowance.first_name as fname, allowance.nid as nid, allowance.dob as dob, allowance.phone as phone, allowance_confirmed.month, allowance_confirmed.amount, allowance_confirmed.is_approved, allowance_confirmed.applicant_id FROM allowance_confirmed
-        INNER JOIN allowance ON allowance_confirmed.applicant_id = allowance.id";
+    $sql = "SELECT employee.id as id, employee.First_name as fname, employee.Email as Email, employee.Phone as Phone, employee.Post as Post, salary_confirmed.month, salary_confirmed.amount, salary_confirmed.is_approved, salary_confirmed.employee_id FROM salary_confirmed
+        INNER JOIN employee ON salary_confirmed.employee_id = employee.employee_id";
     $services = $conn -> query ($sql);
     $serial = 1;
     }
     
 ?>
                     
-<form action="allowance_confirm_search.php" method="GET">
+<form action="employee_salary_confirm_search.php" method="GET">
         <div class="container">
                        <div class="search-box">
 
@@ -97,8 +97,8 @@ if (!isset($_SESSION['loggedin'])){
                                 
                                 
                                 <th>Name</th>
-                                <th>NID</th>
-                                <th>DOB</th>
+                                <th>Email</th>
+                                <th>Post</th>
                                 <th>Phone</th>
                                 <th>Month</th>
                                 <th>Amount</th>
@@ -117,9 +117,27 @@ if (!isset($_SESSION['loggedin'])){
 
                                        
                                         <td><?= $service['fname']?></td>
-                                        <td><?= $service['nid']?></td>
-                                        <td><?= $service['dob']?></td>
-                                        <td><?= $service['phone']?></td>
+                                        <td><?= $service['Email']?></td>
+                                        <td><?php 
+                                            if ($service['Post'] == '4') {
+                                                echo "Mayor";
+                                            } elseif ($service['Post'] == '5') {
+                                                echo "License Inspector";
+                                            }
+                                            elseif ($service['Post'] == '6') {
+                                                echo "Tax Collector";
+                                            }
+                                            elseif ($service['Post'] == '7') {
+                                                echo "Architect";
+                                            }
+                                            elseif ($service['Post'] == '8') {
+                                                echo "Ass. Architect";
+                                            }
+                                            elseif ($service['Post'] == '9') {
+                                                echo "Administrative Officer";
+                                            } 
+                                        ?></td>
+                                        <td><?= $service['Phone']?></td>
                                         <td><?= $service['month']?></td>
                                         <td><?= $service['amount']?></td>
                                         
@@ -134,7 +152,7 @@ if (!isset($_SESSION['loggedin'])){
                                         <td>
                                            
 
-                                            <a  href="allowance_approved.php?appid=<?=$service['applicant_id']?>" class="btn btn-success btn-sm">
+                                            <a  href="employee_salary_approved.php?appid=<?=$service['employee_id']?>" class="btn btn-success btn-sm">
                                                 <i class="fa fa-check"> </i>Received
                                             </a>
 

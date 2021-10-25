@@ -1,3 +1,4 @@
+<?php session_start()?>
 <body>
 <aside id="left-panel" class="left-panel">
     <nav class="navbar navbar-expand-sm navbar-default">
@@ -6,7 +7,9 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="./">Welcome Admin!</a>
+            <?php 
+            if(isset($_SESSION['loggedin']) && $_SESSION['user_role']!=1){ ?>
+            <a class="navbar-brand" href="./">Welcome <?php echo $_SESSION['user_name']; ?></a><?php } ?>
             <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
         </div>
 
@@ -16,9 +19,9 @@
                     <a href="dashboard.php"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                 </li>
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>User</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>Salary</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-list"></i><a href="user_list.php">User List</a></li>
+                        <li><i class="fa fa-list"></i><a href="employee_salary_status.php">Salary Status</a></li>
                         <li><i class="fa fa-plus-circle"></i><a href="admin_signup_form.php">Add User</a></li>
                     </ul>
                 </li>
@@ -27,8 +30,6 @@
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="fa fa-list"></i><a href="employee_list.php">Employee List</a></li>
                         <li><i class="fa fa-plus-circle"></i><a href="employee_signup_form.php">Add Employee</a></li>
-                        <li><i class="fa fa-list"></i><a href="employee_salary_list.php">Issue Salary</a></li>
-                        <li><i class="fa fa-list"></i><a href="employee_salary_confirm_list.php">Salary Dispatch</a></li>
                     </ul>
                 </li>
                 <li class="menu-item-has-children dropdown">

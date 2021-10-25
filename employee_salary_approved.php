@@ -3,11 +3,12 @@
 	if(isset($_GET['appid'])){
 			$app_id = $_GET['appid'];
 
+
 			
 			include_once 'db_con.php';
 			$conect = connect(); 
 			
-			$sql = "UPDATE `allowance_confirmed` SET `is_approved` = 1 WHERE `allowance_confirmed`. applicant_id = '$app_id'";
+			$sql = "UPDATE `salary_confirmed` SET `is_approved` = 1 WHERE `salary_confirmed`. employee_id = '$app_id'";
 			
 			If($conect->query($sql)){
 				$_SESSION['msg'] = "Received successfully.";
@@ -16,6 +17,6 @@
 			}
 	}
 
-header("location:allowance_confirmed_list.php");
+header("location:employee_salary_confirm_list.php");
 
 ?>

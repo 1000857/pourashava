@@ -1,4 +1,4 @@
-0<?php include_once 'temp/header.php'; ?>
+<?php include_once 'temp/header.php'; ?>
 <?php include_once 'temp/nav.php'; ?>
 
 <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
