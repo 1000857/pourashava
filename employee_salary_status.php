@@ -1,17 +1,17 @@
 <?php session_start(); ?>
 <?php
 if (!isset($_SESSION['loggedin'])){
-    header('location:signin_form.php');
+    header('location:employee_signin_form.php');
     exit;
 }
 ?>
-<?php include_once 'template2/_head.php'?>
+<?php include_once 'template2/head.php'?>
 
 <body>
 
 
 <!-- Left Panel -->
-<?php include_once 'template2/leftNav.php'?>
+<?php include_once 'template2/Nav.php'?>
 <!-- Left Panel -->
 
 <!-- Right Panel -->
@@ -19,7 +19,7 @@ if (!isset($_SESSION['loggedin'])){
 <div id="right-panel" class="right-panel">
 
     <!-- Header-->
-    <?php include_once 'template2/header.php'?>
+    <?php include_once 'template2/header2.php'?>
     <!-- Header-->
 
     <div class="breadcrumbs">
@@ -42,17 +42,17 @@ if (!isset($_SESSION['loggedin'])){
             unset ($_SESSION['msg']);
         }
     ?>
-<?php 
-                                    
-   
-    include_once 'db_con.php';
-    $conn = connect();
-    $sql = "SELECT * FROM salary_confirmed ";
-    $services = $conn -> query ($sql);
-    $serial = 1;
-  
-    
-?>
+<?php
+          include_once 'db_con.php';
+          $conn = connect();
+          $userid = $_SESSION['user_id'];
+
+          $sql = "SELECT salary_confirmed.* FROM salary_confirmed INNER JOIN employee ON employee.Employee_id = salary_confirmed.employee_id where employee.id =$userid";
+          $users = $conn -> query ($sql);
+
+          $serial = 1;
+          
+      ?>
 
     <div class="content mt-3">
         <div class="row">
@@ -82,25 +82,25 @@ if (!isset($_SESSION['loggedin'])){
                             </thead>
                             <tbody>
                                 <?php
-                                    foreach ($services as $service){
-                                ?>
+                                foreach ($users as $user){
+                            ?>
                                     <tr>
                                         <td><?= $serial++?></td>
                                         
 
                                        
-                                        <td><?= $service['employee_id']?></td>
-                                        <td><?= $service['month']?></td>
+                                        <td><?= $user['employee_id']?></td>
+                                        <td><?= $user['month']?></td>
                                       
                                         
-                                        <td><?= $service['amount']?></td>
+                                        <td><?= $user['amount']?></td>
                                         
                                         
                                         
                                         <td><?php 
-                                            if ($service['is_approved'] == '1') {
+                                            if ($user['is_approved'] == '1') {
                                                 echo "Received";
-                                            }  elseif ($service['is_approved'] == "") {
+                                            }  elseif ($user['is_approved'] == "") {
                                                 echo "Pending";
                                             } 
                                         ?></td>
@@ -167,4 +167,4 @@ if (!isset($_SESSION['loggedin'])){
 </div><!-- /#right-panel -->
 
 <!-- Right Panel -->
-<?php include_once 'template2/footer.php'?>
+<?php include_once 'template2/footer2.php'?>

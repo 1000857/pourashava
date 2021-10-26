@@ -1,11 +1,11 @@
-
-<?php include_once 'template2/_head.php'?>
+<?php session_start()?>
+<?php include_once 'template2/head.php'?>
 
 <body>
 
 
     <!-- Left Panel -->
-        <?php include_once 'template2/leftNav.php'?>
+        <?php include_once 'template2/Nav.php'?>
     <!-- Left Panel -->
 
     <!-- Right Panel -->
@@ -13,7 +13,7 @@
     <div id="right-panel" class="right-panel">
 
         <!-- Header-->
-            <?php include_once 'template2/header.php'?>
+            <?php include_once 'template2/header2.php'?>
         <!-- Header-->
 
         <div class="breadcrumbs">
@@ -132,4 +132,4 @@
     </div><!-- /#right-panel -->
 
     <!-- Right Panel -->
-<?php include_once 'template2/footer.php'?>
+<?php include_once 'template2/footer2.php'?>

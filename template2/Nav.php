@@ -1,4 +1,4 @@
-<?php session_start()?>
+
 <body>
 <aside id="left-panel" class="left-panel">
     <nav class="navbar navbar-expand-sm navbar-default">
