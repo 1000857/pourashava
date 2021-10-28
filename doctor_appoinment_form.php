@@ -56,7 +56,7 @@ if (!isset($_SESSION['loggedin'])){
                                 foreach ($users as $user){
                             ?>
                 
-                <option value="<?= $user['id']?>"><?= $user['First_name']?></option>
+                <option value="<?= $user['id']?>"><?= $user['First_name']?> <?= $user['Last_name']?></option>
                     <?php } ?>
                 
             </select>
@@ -80,61 +80,61 @@ if (!isset($_SESSION['loggedin'])){
             <div class="form-check">
                 <div class="checkbox">
                     <label for="checkbox1" class="form-check-label ">
-                        <input type="checkbox" id="checkbox1" name="slot[]" value="10:00" class="form-check-input">10:00AM
+                        <input type="checkbox" id="checkbox1" name="slot[]" value="10:00:00" class="form-check-input">10:00AM
                 </div>
                 <div class="checkbox">
                     <label for="checkbox2" class="form-check-label ">
-                        <input type="checkbox" id="checkbox2" name="slot[]" value="10:30" class="form-check-input"> 10:30AM
+                        <input type="checkbox" id="checkbox2" name="slot[]" value="10:30:00" class="form-check-input"> 10:30AM
                     </label>
                 </div>
                 
                 <div class="checkbox">
                     <label for="checkbox4" class="form-check-label ">
-                        <input type="checkbox" id="checkbox4" name="slot[]" value="11:00" class="form-check-input">11:00AM
+                        <input type="checkbox" id="checkbox4" name="slot[]" value="11:00:00" class="form-check-input">11:00AM
                     </label>
                 </div>
                 
                 <div class="checkbox">
                     <label for="checkbox6" class="form-check-label ">
-                        <input type="checkbox" id="checkbox6" name="slot[]" value="11:30" class="form-check-input">11:30AM
+                        <input type="checkbox" id="checkbox6" name="slot[]" value="11:30:00" class="form-check-input">11:30AM
                     </label></div>
              
                 <div class="checkbox">
                     <label for="checkbox8" class="form-check-label ">
-                        <input type="checkbox" id="checkbox8" name="slot[]" value="12:00" class="form-check-input">12:00PM
+                        <input type="checkbox" id="checkbox8" name="slot[]" value="12:00:00" class="form-check-input">12:00PM
                     </label>
                 </div>
                 
                 <div class="checkbox">
                     <label for="checkbox10" class="form-check-label ">
-                        <input type="checkbox" id="checkbox10" name="slot[]" value="12:30" class="form-check-input">12:30PM
+                        <input type="checkbox" id="checkbox10" name="slot[]" value="12:30:00" class="form-check-input">12:30PM
                     </label>
                 </div>
                 
                 <div class="checkbox">
                     <label for="checkbox12" class="form-check-label ">
-                        <input type="checkbox" id="checkbox12" name="slot[]" value="01:00" class="form-check-input">01:00PM
+                        <input type="checkbox" id="checkbox12" name="slot[]" value="01:00:00" class="form-check-input">01:00PM
                     </label>
                 </div>
                 
                 <div class="checkbox">
                     <label for="checkbox14" class="form-check-label ">
-                        <input type="checkbox" id="checkbox14" name="slot[]" value="02:30" class="form-check-input"> 02:30PM
+                        <input type="checkbox" id="checkbox14" name="slot[]" value="02:30:00" class="form-check-input"> 02:30PM
                     </label>
                 </div>
                 <div class="checkbox">
                     <label for="checkbox15" class="form-check-label ">
-                        <input type="checkbox" id="checkbox15" name="slot[]" value="03:00" class="form-check-input">03:00PM
+                        <input type="checkbox" id="checkbox15" name="slot[]" value="03:00:00" class="form-check-input">03:00PM
                     </label>
                 </div>
                 <div class="checkbox">
                     <label for="checkbox16" class="form-check-label ">
-                        <input type="checkbox" id="checkbox16" name="slot[]" value="03:30" class="form-check-input">03:30PM
+                        <input type="checkbox" id="checkbox16" name="slot[]" value="03:30:00" class="form-check-input">03:30PM
                     </label>
                 </div>
                 <div class="checkbox">
                     <label for="checkbox17" class="form-check-label ">
-                        <input type="checkbox" id="checkbox17" name="slot[]" value="04:00" class="form-check-input"> 04:00PM
+                        <input type="checkbox" id="checkbox17" name="slot[]" value="04:00:00" class="form-check-input"> 04:00PM
                     </label>
                 </div>
                 
