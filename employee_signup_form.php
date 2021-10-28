@@ -45,6 +45,23 @@ if (!isset($_SESSION['loggedin'])){
                 <option value="7">Architect</option>
                 <option value="8">Ass. Architect</option>
                 <option value="9">Administrative Officer</option>
+                <option value="10">Doctor</option>
+                
+            </select>
+        </div>
+    </div>
+    <div class="row form-group">
+        <div class="col col-md-3"><label for="select" class=" form-control-label">Expert IN</label></div>
+        <div class="col-12 col-md-9">
+            <select name="doctor" id="select" class="form-control">
+                <option value="">Only For Doctor</option>
+                <option value="General">General</option>
+                <option value="Gynecologists">Gynecologists</option>
+                <option value="Cardiologists">Cardiologists</option>
+                <option value="Urologists">Urologists</option>
+                <option value="Neurologists">Neurologists</option>
+                <option value="Psychiatrists">Psychiatrists</option>
+                
                 
             </select>
         </div>

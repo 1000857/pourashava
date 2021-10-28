@@ -3,6 +3,7 @@
 session_start();
 if($_POST){
     $user      = $_POST['user'];
+    $doctor      = $_POST['doctor'];
     $eid      = $_POST['eid'];
     $fname     	= $_POST['fname'];
     $lname  	= $_POST['lname'];
@@ -20,6 +21,7 @@ if($_POST){
         header('location:employee_signup_form.php');
         exit;
         }
+
     if($eid == ''){
         $_SESSION['msg']= 'Please insert Employee ID.<br>';
         header('location:employee_signup_form.php');
@@ -153,8 +155,8 @@ $_SESSION['msg'] = '';
            header('location:employee_signup_form.php');
             exit;
         }
-            $sql="INSERT INTO employee (Post, Employee_id, First_name, Last_name, Birthday, Gender, Email, Phone, Password, Pic)
-				VALUES ('$user','$eid','$fname', '$lname', '$bdate', '$gender', '$email', '$phone', '$password','$fileName')";
+            $sql="INSERT INTO employee (Post, Expert, Employee_id, First_name, Last_name, Birthday, Gender, Email, Phone, Password, Pic)
+				VALUES ('$user','$doctor','$eid','$fname', '$lname', '$bdate', '$gender', '$email', '$phone', '$password','$fileName')";
 
 
             $conn->query($sql);

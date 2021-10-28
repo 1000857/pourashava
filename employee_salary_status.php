@@ -26,7 +26,7 @@ if (!isset($_SESSION['loggedin'])){
         <div class="col-sm-4">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>Allowance Applicant List</h1>
+                    <h1>MY SALARY STATUS</h1>
                 </div>
             </div>
         </div>
@@ -69,14 +69,14 @@ if (!isset($_SESSION['loggedin'])){
                             <thead>
                             <tr>
                                 <th class="text-center" style="width: 3px;">Sl</th>
-                                <th>ID</th>
+                                <th>OFFICE ID</th>
                                 
-                                <th>Month</th>
+                                <th>MONTH</th>
                                 
                                 
-                                <th>Amount</th>
+                                <th>AMOUNT</th>
                                 
-                                <th>Status</th>
+                                <th>STATUS</th>
                                 
                             </tr>
                             </thead>
@@ -101,60 +101,19 @@ if (!isset($_SESSION['loggedin'])){
                                             if ($user['is_approved'] == '1') {
                                                 echo "Received";
                                             }  elseif ($user['is_approved'] == "") {
-                                                echo "Pending";
+                                                echo "Not Received";
                                             } 
                                         ?></td>
                                          
-
-
-                                        <!--<td><?= $service['occupation']?></td>
-                                        <td><?= $service['education']?></td>
-                                        <td><?= $service['relegion']?></td>
-                                        <td><?= $service['present_village']?></td> 
-                                        <td><?= $service['present_ward']?></td>
-                                        <td><?= $service['present_upozilla']?></td>
-                                        <td><?= $service['present_thana']?></td>
-                                        <td><?= $service['present_district']?></td>
-                                        <td><?= $service['permanent_village']?></td>
-                                        <td><?= $service['permanent_ward']?></td>
-                                        <td><?= $service['permanent_upozilla']?></td>
-                                        <td><?= $service['permanent_thana']?></td>
-                                        <td><?= $service['permanent_district']?></td>
-                                        <td><?= $service['mobile']?></td>
-                                        <td><?= $service['email']?></td>
-                                        <td><?= $service['other']?></td>
-                                        <td><?= $service['pic']?></td>-->
-
-
-
-
-
-
-                                    
-                                        <!--<td>
-                                            <a  href="view_allowance.php?appid=<?=$service['id']?>" class="btn btn-info btn-sm">
-                                                <i class="fa fa-edit"></i>View
-                                            </a>
-
-                                            <a  href="trade_license_approved.php?appid=<?=$service['id']?>" class="btn btn-success btn-sm">
-                                                <i class="fa fa-correct"></i>Approved
-                                            </a>
-
-                                            <a  href="trade_license_decline.php?appid=<?=$service['id']?>" class="btn btn-danger btn-sm">
-                                                <i class="fa fa-trash"></i>Decline
-                                            </a>
-
-
-
                                             
-                                        </td>-->
+                                        
                                     </tr>
-                                 </form>
+                                 
                                 <?php } ?>
                             </tbody>
                         </table>
                         
-    <input class="btn btn-success btn-sm" type="submit" name="Submit" value="Submit" />
+    
                     </div>
                 </div>
             </div>

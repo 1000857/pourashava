@@ -69,8 +69,11 @@
                                             }
                                             elseif ($user['Post'] == '9') {
                                                 echo "Administrative Officer";
-                                            } 
-                                        ?></p>
+                                            }
+                                            elseif ($user['Post'] == '10') {
+                                                echo "Doctor";
+                                            }  
+                                        ?>(<?= $user['Expert']?>)</p>
                                         </div>
                                         
                                     </div>
@@ -113,8 +116,11 @@
                                             }
                                             elseif ($user['Post'] == '9') {
                                                 echo "Administrative Officer";
+                                            }
+                                            elseif ($user['Post'] == '10') {
+                                                echo "Doctor";
                                             } 
-                                        ?></span></a>
+                                        ?> (<?= $user['Expert']?>)</span></a>
                                     </li>
                                     <li class="list-group-item">
                                         <a href="#"> <i class="fa fa-calendar"></i> BIRTH DATE <span class="badge badge- pull-right r-activity" style="color:green;font-size:20px;"><?= $user['Birthday']?></span></a>
