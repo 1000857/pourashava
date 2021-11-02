@@ -26,7 +26,7 @@ if (!isset($_SESSION['loggedin'])){
         <div class="col-sm-4">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>Form management</h1>
+                    <h1>Doctor List</h1>
                 </div>
             </div>
         </div>
@@ -34,7 +34,7 @@ if (!isset($_SESSION['loggedin'])){
             <div class="page-header float-right">
                 <div class="page-title">
                     <ol class="breadcrumb text-right">
-                        <a class="btn btn-primary" href="admin_signup_form.php" value="" ><i class="fa fa-plus-square"></i> Add User </a>
+                        <a class="btn btn-primary" href="employee_signup_form.php" value="" ><i class="fa fa-plus-square"></i> Add Doctor </a>
                     </ol>
                 </div>
             </div>
@@ -53,17 +53,13 @@ if (!isset($_SESSION['loggedin'])){
     ?>
 <?php 
                                     
-    if(isset($_SESSION['files'])){
-        $services = $_SESSION['files'];
-        unset($_SESSION['files']);
-        $serial = 1;
-    }else{
+    
     include_once 'db_con.php';
     $conn = connect();
-    $sql = "SELECT * FROM member ORDER BY id DESC";
+    $sql = "SELECT * FROM employee WHERE Post= 10 ORDER BY id DESC";
     $services = $conn -> query ($sql);
     $serial = 1;
-    }
+   
     
 ?>
 
@@ -77,13 +73,14 @@ if (!isset($_SESSION['loggedin'])){
                             <thead>
                             <tr>
                                 <th class="text-center" style="width: 3px;">Sl</th>
-                                
+                                <th>Photo</th>
+                                <th>Employee ID</th>
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Birth Date</th>
                                 <th>Gender</th>
                                 <th>Phone</th>
-                                <th>Role</th>
+                                <th>Post</th>
                                 <th>Action</th>
                                  
                             </tr>
@@ -94,7 +91,8 @@ if (!isset($_SESSION['loggedin'])){
                                 ?>
                                     <tr>
                                         <td><?= $serial++?></td>
-                                        
+                                        <td><img  style="height:90px" src="images/employee/<?= $service['Pic']?>" alt=""></td>
+                                        <td><?= $service['Employee_id']?></td>
                                         <td><?= $service['First_name']?></td>
                                         
                                         
@@ -105,10 +103,25 @@ if (!isset($_SESSION['loggedin'])){
                                         <td><?= $service['Phone']?></td>
                                         
                                         <td> <?php 
-                                            if ($service['User_role'] == '1') {
-                                                echo "Admin";
-                                            } elseif ($service['User_role'] == '') {
-                                                echo "User";
+                                            if ($service['Post'] == '4') {
+                                                echo "Mayor";
+                                            } elseif ($service['Post'] == '5') {
+                                                echo "License Inspector";
+                                            }
+                                            elseif ($service['Post'] == '6') {
+                                                echo "Tax Collector";
+                                            }
+                                            elseif ($service['Post'] == '7') {
+                                                echo "Architect";
+                                            }
+                                            elseif ($service['Post'] == '8') {
+                                                echo "Ass. Architect";
+                                            }
+                                            elseif ($service['Post'] == '9') {
+                                                echo "Administrative Officer";
+                                            }
+                                            elseif ($service['Post'] == '10') {
+                                                echo "Doctor";
                                             } 
                                         ?></td>
                                         
@@ -139,8 +152,6 @@ if (!isset($_SESSION['loggedin'])){
 
                                     
                                         <td>
-                                           
-
                                             
 
                                             <a  href="#" class="btn btn-danger btn-sm">

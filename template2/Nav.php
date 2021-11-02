@@ -33,7 +33,7 @@
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>APPOINMENT</a>
                     <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-list"></i><a href="employee_salary_status.php">Salary Status</a></li>
+                        <li><i class="fa fa-list"></i><a href="view_appointment_list.php">APPOINMENT LIST</a></li>
                         
                     </ul>
                 </li>

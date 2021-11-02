@@ -36,7 +36,7 @@
                       <p class="text-secondary mb-1"><strong>EXPERT IN:</strong> <?= $user['Expert']?></p>
                       <p class="text-muted font-size-sm"><strong>PHONE: </strong> <?= $user['Phone']?></p> </br>
 
-                      <a class="btn btn-primary" href="patient_appoinment_form.php" >REQUEST AN APPOINTMENT </a>
+                      <a class="btn btn-primary" href="patient_appoinment_form.php?doctor_id=<?= $user['id']?>" >REQUEST AN APPOINTMENT </a>
 
                     
                       

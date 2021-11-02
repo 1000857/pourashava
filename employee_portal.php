@@ -1,4 +1,10 @@
-<?php session_start()?>
+<?php session_start();?>
+<?php
+if (!isset($_SESSION['loggedin'])){
+    header('location:employee_signin_form.php');
+    exit;
+}
+?>
 <?php include_once 'template2/head.php'?>
 
 <body>

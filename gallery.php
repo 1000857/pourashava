@@ -1,84 +1,136 @@
 <?php include_once 'temp/header.php'; ?>
 <?php include_once 'temp/nav.php'; ?>
-  <!-- ################################################################################################ -->
-  <!-- ################################################################################################ -->
-  <!-- ################################################################################################ -->
-  <div id="breadcrumb" class="hoc clear"> 
-    <!-- ################################################################################################ -->
-    <h6 class="heading">Gallery</h6>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Lorem</a></li>
-      <li><a href="#">Ipsum</a></li>
-      <li><a href="#">Dolor</a></li>
-    </ul>
-    <!-- ################################################################################################ -->
-  </div>
-  <!-- ################################################################################################ -->
-</div>
-<!-- End Top Background Image Wrapper -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<div class="wrapper row3">
-  <main class="hoc container clear"> 
-    <!-- main body -->
-    <!-- ################################################################################################ -->
-    <div class="content"> 
-      <!-- ################################################################################################ -->
-      <div id="gallery">
-        <figure>
-          <header class="heading">Gallery Title Goes Here</header>
-          <ul class="nospace clear">
-            <li class="one_quarter first"><a href="#"><img src="../images/demo/gallery/01.png" alt=""></a></li>
-            <li class="one_quarter"><a href="#"><img src="../images/demo/gallery/01.png" alt=""></a></li>
-            <li class="one_quarter"><a href="#"><img src="../images/demo/gallery/01.png" alt=""></a></li>
-            <li class="one_quarter"><a href="#"><img src="../images/demo/gallery/01.png" alt=""></a></li>
-            <li class="one_quarter first"><a href="#"><img src="../images/demo/gallery/01.png" alt=""></a></li>
-            <li class="one_quarter"><a href="#"><img src="../images/demo/gallery/01.png" alt=""></a></li>
-            <li class="one_quarter"><a href="#"><img src="../images/demo/gallery/01.png" alt=""></a></li>
-            <li class="one_quarter"><a href="#"><img src="../images/demo/gallery/01.png" alt=""></a></li>
-            <li class="one_quarter first"><a href="#"><img src="../images/demo/gallery/01.png" alt=""></a></li>
-            <li class="one_quarter"><a href="#"><img src="../images/demo/gallery/01.png" alt=""></a></li>
-            <li class="one_quarter"><a href="#"><img src="../images/demo/gallery/01.png" alt=""></a></li>
-            <li class="one_quarter"><a href="#"><img src="../images/demo/gallery/01.png" alt=""></a></li>
-          </ul>
-          <figcaption>Gallery Description Goes Here</figcaption>
-        </figure>
-      </div>
-      <!-- ################################################################################################ -->
-      <!-- ################################################################################################ -->
-      <nav class="pagination">
-        <ul>
-          <li><a href="#">&laquo; Previous</a></li>
-          <li><a href="#">1</a></li>
-          <li><a href="#">2</a></li>
-          <li><strong>&hellip;</strong></li>
-          <li><a href="#">6</a></li>
-          <li class="current"><strong>7</strong></li>
-          <li><a href="#">8</a></li>
-          <li><a href="#">9</a></li>
-          <li><strong>&hellip;</strong></li>
-          <li><a href="#">14</a></li>
-          <li><a href="#">15</a></li>
-          <li><a href="#">Next &raquo;</a></li>
-        </ul>
-      </nav>
-      <!-- ################################################################################################ -->
+
+<div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+    <div class="wrapper wrapper--w680">
+        <div class="card card-4">
+            <div class="card-body">
+                <h2 class="title">BOOK AN APPOINMENT</h2>
+
+                <?php
+                if(isset($_SESSION['msg'])){
+                    echo $_SESSION['msg'];
+                    unset ($_SESSION['msg']);
+                }
+                ?>
+    <?php 
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+  
+    $date = $_POST['date'];
+
+
+include_once 'db_con.php';
+
+
+$sql = "SELECT * FROM appointment WHERE date= '$date' AND is_approved=0";
+  $output = $con->query($sql);
+print_r($output);
+exit;
+?>
+
+                <form action="patient_appoinment_confirm.php" method="POST">
+                    
+                    
+                    
+           <div class="col col-md-9"> 
+           
+            <div class="form-check">
+                <?php 
+                                    if($output-> num_rows > 0){
+                                        $i=0;
+                                        foreach($output AS $row){ 
+                                            
+                                        
+                                ?>
+                <div class="radio">
+
+                    <label for="filled-in-box<?php print $i; ?>" style="color: black;" class="form-check-label "><?=$row['time']?></label>
+                        <input type="radio" id="filled-in-box<?php print $i; ?>" name="date" value="<?=$row['date']?>" class="form-check-input"><?= $service['date']?></br>
+                        
+                </div>
+                <?php $i++?>
+                                <?php  } }?>
+                <!--<div class="checkbox">
+                    <label for="checkbox2" style="color: black;" class="form-check-label ">
+                        <input type="checkbox" id="checkbox2" name="slot[]" value="10:30:00" class="form-check-input"> 10:30AM
+                    </label>
+                </div>
+                
+                <div class="checkbox">
+                    <label for="checkbox4" style="color: black;" class="form-check-label ">
+                        <input type="checkbox" id="checkbox4" name="slot[]" value="11:00:00" class="form-check-input">11:00AM
+                    </label>
+                </div>
+                
+                <div class="checkbox">
+                    <label for="checkbox6" style="color: black;" class="form-check-label ">
+                        <input type="checkbox" id="checkbox6" name="slot[]" value="11:30:00" class="form-check-input">11:30AM
+                    </label></div>
+             
+                <div class="checkbox">
+                    <label for="checkbox8" style="color: black;" class="form-check-label ">
+                        <input type="checkbox" id="checkbox8" name="slot[]" value="12:00:00" class="form-check-input">12:00PM
+                    </label>
+                </div>
+                
+                <div class="checkbox">
+                    <label for="checkbox10" style="color: black;" class="form-check-label ">
+                        <input type="checkbox" id="checkbox10" name="slot[]" value="12:30:00" class="form-check-input">12:30PM
+                    </label>
+                </div>
+                
+                <div class="checkbox">
+                    <label for="checkbox12" style="color: black;" class="form-check-label ">
+                        <input type="checkbox" id="checkbox12" name="slot[]" value="01:00:00" class="form-check-input">01:00PM
+                    </label>
+                </div>
+                
+                <div class="checkbox">
+                    <label for="checkbox14" style="color: black;" class="form-check-label ">
+                        <input type="checkbox" id="checkbox14" name="slot[]" value="02:30:00" class="form-check-input"> 02:30PM
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="checkbox15" style="color: black;" class="form-check-label ">
+                        <input type="checkbox" id="checkbox15" name="slot[]" value="03:00:00" class="form-check-input">03:00PM
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="checkbox16" style="color: black;" class="form-check-label ">
+                        <input type="checkbox" id="checkbox16" name="slot[]" value="03:30:00" class="form-check-input">03:30PM
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="checkbox17" style="color: black;" class="form-check-label ">
+                        <input type="checkbox" id="checkbox17" name="slot[]" value="04:00:00" class="form-check-input"> 04:00PM
+                    </label>
+                </div>
+                
+                
+                
+            </div>
+        </div> --><?php } ?>
+        
+
+                    <input type="hidden" name="status" value="1">
+                            <input type="hidden" name="doctor_id" value="<?=$row['doctor_id']?>">
+                            <input name="register" type="submit" value="Register" class="btn px-5 btn-primary">
+                </form>
+            </div>
+        </div>
     </div>
-    <!-- ################################################################################################ -->
-    <!-- / main body -->
-    <div class="clear"></div>
-  </main>
 </div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- Bottom Background Image Wrapper -->
+</div></div>
+<!-- Jquery JS-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<!-- Vendor JS-->
+<script src="vendor/select2/select2.min.js"></script>
+<script src="vendor/datepicker/moment.min.js"></script>
+<script src="vendor/datepicker/daterangepicker.js"></script>
+
+<!-- Main JS-->
+<script src="js/global.js"></script>
+
+
 <?php include_once 'temp/footer.php'; ?>
-<!-- JAVASCRIPTS -->
-<script src="../layout/scripts/jquery.min.js"></script>
-<script src="../layout/scripts/jquery.backtotop.js"></script>
-<script src="../layout/scripts/jquery.mobilemenu.js"></script>
-</body>
-</html>
+<!-- end document-->

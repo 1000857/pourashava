@@ -21,10 +21,10 @@ if (!isset($_SESSION['loggedin'])){
     <?php include_once 'template/header.php'?>
     <!-- Header-->
 
-<div class="col-lg-10">
+<div class="col-lg-12">
     <div class="card">
     <div class="card-header">
-        <strong>CREATE EMPLOYEE</strong> Elements
+        <strong>CREATE STAFF</strong>
     </div>
 <div class="card-body card-block">
                 <?php
@@ -67,8 +67,8 @@ if (!isset($_SESSION['loggedin'])){
         </div>
     </div>
         <div class="row form-group">
-            <div class="col col-md-3"><label for="text-input" class=" form-control-label">Employee ID</label></div>
-            <div class="col-12 col-md-9"><input type="number" id="text-input" name="eid" placeholder="Employee ID" class="form-control"><small class="form-text text-muted"></small>
+            <div class="col col-md-3"><label for="text-input" class=" form-control-label">Staff ID</label></div>
+            <div class="col-12 col-md-9"><input type="number" id="text-input" name="eid" placeholder="Staff ID" class="form-control"><small class="form-text text-muted"></small>
             </div>
         </div>
         <div class="row form-group">

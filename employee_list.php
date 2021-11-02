@@ -53,17 +53,13 @@ if (!isset($_SESSION['loggedin'])){
     ?>
 <?php 
                                     
-    if(isset($_SESSION['files'])){
-        $services = $_SESSION['files'];
-        unset($_SESSION['files']);
-        $serial = 1;
-    }else{
+    
     include_once 'db_con.php';
     $conn = connect();
     $sql = "SELECT * FROM employee ORDER BY id DESC";
     $services = $conn -> query ($sql);
     $serial = 1;
-    }
+   
     
 ?>
 
@@ -85,6 +81,7 @@ if (!isset($_SESSION['loggedin'])){
                                 <th>Gender</th>
                                 <th>Phone</th>
                                 <th>Post</th>
+                                <th>Action</th>
                                  
                             </tr>
                             </thead>
@@ -123,6 +120,9 @@ if (!isset($_SESSION['loggedin'])){
                                             elseif ($service['Post'] == '9') {
                                                 echo "Administrative Officer";
                                             } 
+                                            elseif ($service['Post'] == '10') {
+                                                echo "Doctor";
+                                            } 
                                         ?></td>
                                         
                                             
@@ -152,16 +152,10 @@ if (!isset($_SESSION['loggedin'])){
 
                                     
                                         <td>
-                                            <a  href="view_form.php?appid=<?=$service['id']?>" class="btn btn-info btn-sm">
-                                                <i class="fa fa-edit"></i>View
-                                            </a>
+                                            
 
-                                            <a  href="public_approved.php?appid=<?=$service['id']?>" class="btn btn-success btn-sm">
-                                                <i class="fa fa-correct"></i>Approved
-                                            </a>
-
-                                            <a  href="public_decline.php?appid=<?=$service['id']?>" class="btn btn-danger btn-sm">
-                                                <i class="fa fa-trash"></i>Decline
+                                            <a  href="#" class="btn btn-danger btn-sm">
+                                                <i class="fa fa-trash"></i>Delete
                                             </a>
 
 

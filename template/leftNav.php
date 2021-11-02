@@ -32,6 +32,15 @@
                     </ul>
                 </li>
                 <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>Doctor</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-list"></i><a href="doctor_list_all.php">Doctor List</a></li>
+                        <li><i class="fa fa-plus-circle"></i><a href="doctor_appoinment_form.php"> Create Doctor Appointment</a></li>
+                        <li><i class="fa fa-list"></i><a href="view_appointment_list.php">Appoinment List</a></li>
+                        <li><i class="fa fa-list"></i><a href="employee_salary_confirm_list.php">Salary Dispatch</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>Humanitarian Allowance</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="fa fa-list"></i><a href="allowance_form.php">Allowance Form</a></li>
