@@ -26,7 +26,7 @@ if (!isset($_SESSION['loggedin'])){
         <div class="col-sm-4">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>Allowance Applicant List</h1>
+                    <h1>Issue Tax</h1>
                 </div>
             </div>
         </div>
@@ -44,17 +44,13 @@ if (!isset($_SESSION['loggedin'])){
     ?>
 <?php 
                                     
-    if(isset($_SESSION['files'])){
-        $services = $_SESSION['files'];
-        unset($_SESSION['files']);
-        $serial = 1;
-    }else{
+   
     include_once 'db_con.php';
     $conn = connect();
-    $sql = "SELECT * FROM allowance";
+    $sql = "SELECT * FROM house WHERE is_approved = 1";
     $services = $conn -> query ($sql);
     $serial = 1;
-    }
+    
     
 ?>
 
@@ -63,31 +59,16 @@ if (!isset($_SESSION['loggedin'])){
             <div class="col-md-12">
                 <div class="card">
                     
-                    <form action="allowance_confirm.php" method="POST">
+                    <form action="tax_confirm.php" method="POST">
                         <div class="card-header">
                         
                         <strong class="card-title">
-                            <label>MONTH <span class="required"></span></label>
+                            <label>Year <span class="required"></span></label>
                                             
                                                 
-                    <select name="month" class="field-divided" required="">
-                             <option value=""selected="">SELECT</option>
-                                <option value="January" >January</option>
-                                <option value="February">February</option>
-                                <option value="March">March</option>
-                                <option value="April">April</option>
-                                <option value="May">May</option>
-                                
-                                <option value="June">June</option>
-                                <option value="July">July</option>
-                                <option value="August">August</option>
-                                <option value="September">September</option>
-                                <option value="October">October</option>
-                                <option value="November">November</option>
-                                <option value="December">December</option>
-                                
-                            </select></br>
-                        
+                
+                        <label>Year:<span class="required">*</span></label>
+                            <input type="month" name="year" class="field-long" placeholder="Input year" /></br>
                             <label>Amount:<span class="required">*</span></label>
                             <input type="number" name="amount" class="field-long" placeholder="Insert Amount" /></br></strong>
         
@@ -105,13 +86,13 @@ if (!isset($_SESSION['loggedin'])){
                             <tr>
                                 <th class="text-center" style="width: 3px;">Sl</th>
                                 <th>Action</th>
-                                <th>Allowance Type</th>
-                                <th>Month</th>
+                                <th>Tax Type</th>
+                                
                                 <th>Name</th>
                                 <th>Father</th>
                                 <th>NID/Birth Certificate No.</th>
                                 <th>Birth Date</th>
-                                
+                                <th>Status</th>
                                 
                             </tr>
                             </thead>
@@ -123,31 +104,58 @@ if (!isset($_SESSION['loggedin'])){
                                         <td><?= $serial++?></td>
                                         <td>
                                            
-                                              <input type="checkbox" id="allowance" name="allow[ ]" value=" <?=$service['id']?> "></br>Approved for Allowance<br>
+                                              <input type="checkbox" id="tax" name="tax[ ]" value=" <?=$service['id']?> "></br>Issue Tax<br>
                                               
                                            
                                             </td>
 
                                        
-                                        <td><?= $service['service_name']?></td>
-                                        <td><?= $service['month']?></td>
-                                        <td><?= $service['first_name']?> <?= $service['last_name']?></td>
+                                        <td><?= $service['type']?></td>
+                                        
+                                        <td><?= $service['name']?></td>
                                         
                                         <td><?= $service['father']?></td>
                                         
                                         
                                         <td><?= $service['nid']?></td>
                                         <td><?= $service['dob']?></td>
-                                        
+
+                                        <td><?php 
+                                            if ($service['is_approved'] == '1') {
+                                                echo "Varified";
+                                            } elseif ($service['is_approved'] == '0') {
+                                                echo "Declined";
+                                            } elseif ($service['is_approved'] == "") {
+                                                echo "Pending";
+                                            } 
+                                        ?></td>
                                          
 
 
-                                       
+
+
+
 
 
 
                                     
-                                       
+                                        <!--<td>
+                                            <a  href="view_allowance.php?appid=<?=$service['id']?>" class="btn btn-info btn-sm">
+                                                <i class="fa fa-edit"></i>View
+                                            </a>
+
+                                            <a  href="trade_license_approved.php?appid=<?=$service['id']?>" class="btn btn-success btn-sm">
+                                                <i class="fa fa-correct"></i>Approved
+                                            </a>
+
+                                            <a  href="trade_license_decline.php?appid=<?=$service['id']?>" class="btn btn-danger btn-sm">
+                                                <i class="fa fa-trash"></i>Decline
+                                            </a>
+
+
+
+                                            
+                                        </td>-->
                                     </tr>
                                  </form>
                                 <?php } ?>

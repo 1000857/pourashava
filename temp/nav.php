@@ -25,18 +25,19 @@
                 </li>
                 <li><a class="drop" href="#">LICENSE APPLICATIONS</a>
                     <ul>
-                        <li><a href="#">Level 2</a></li>
-                        <li><a class="drop" href="#">Level 2 + Drop</a>
+                        <li><a href="rickshaw_form.php">Rickshaw LICENSE</a></li>
+                        <li><a class="drop" href="#">Trade License</a>
                             <ul>
-                                <li><a href="#">Level 3</a></li>
+                                <li><a href="trade_license_form.php">Trade License</a></li>
                                 <li><a href="#">Level 3</a></li>
                                 <li><a href="#">Level 3</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Level 2</a></li>
+                        <li><a href="rickshaw_form.php">VAN LICENSE</a></li>
+                        <li><a href="house_permission_form.php">HOUSE PERMISSION</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Link Text</a></li>
+                <li><a href="employee_portal.php">Portal</a></li>
                 <li><a href="#">Link Text</a></li>
                 <li><a href="#">Link Text</a></li>
             </ul>

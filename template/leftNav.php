@@ -49,6 +49,15 @@
                     </ul>
                     
                 </li>
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>Tax Management</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-list"></i><a href="tax_list.php">Issue Tax</a></li>
+                        <li><i class="fa fa-plus-circle"></i><a href="tax_confirmed_list.php">Tax List</a></li>
+                        <li><i class="fa fa-list"></i><a href="allowance_confirmed_list.php">Allowance Confirmed</a></li>
+                    </ul>
+                    
+                </li>
                 <li>
                     <a href="department_index.php"> <i class="menu-icon fa fa-building"></i>Humanitarian Allowance</a>
                 </li>

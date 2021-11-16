@@ -47,7 +47,8 @@
             if(isset($_SESSION['loggedin']) && $_SESSION['user_role']!=1){ ?>
   <button class="dropbtn"><?php echo $_SESSION['user_name']; ?></button>
   <div class="dropdown-content">
-    <a href="update_profile_form.php">Update profile</a>
+    <a href="1.php">My Profile</a>
+    <a href="update_profile_form.php">Update Profile</a>
     <a href="change_pass_form.php">Change password</a>
     <a href="logout.php">Logout</a>
   </div>
@@ -55,6 +56,7 @@
     <button class="dropbtn">Admin</button>
   <div class="dropdown-content">
     <a href="dashboard.php">Admin Dashboard</a>
+    <a href="1.php">My Profile</a>
     <a href="change_pass_form.php">Change password</a>
     <a href="logout.php">Logout</a>
 
