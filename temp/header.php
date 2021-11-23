@@ -5,12 +5,12 @@
 <html lang="en">
 <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 <head>
-    <title>Spourmo</title>
+    <title>Pourashava</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-
+    <link rel="icon" href="images/bdd.png" sizes="96x96" type="image/png">
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
     <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <!-- Font special for pages-->
@@ -33,9 +33,19 @@
         <!-- ################################################################################################ -->
         <div class="fl_left">
             <ul class="nospace">
-                <li><i class="fas fa-mobile-alt rgtspace-5"></i> +00 (123) 456 7890</li>
-                <li><i class="far fa-envelope rgtspace-5"></i> info@domain.com</li>
-            </ul>
+                
+                
+
+            
+            <li><i class="far fa-clock" style="color: white;"></i>
+            <span id="Dhaka_z412" style="font-size:15px;color:white;"></span>
+                                <script src="//widget.time.is/en.js"></script>
+                                <script>
+                                time_is_widget.init({Dhaka_z412:{template:"DATE", date_format:"dayname, monthname dnum, year"}});
+                                </script></li>
+                                
+            </ul></br>
+            <i class="fas fa-mobile-alt rgtspace-5" style="color: white;"></i> +8801861601238
         </div>
         <div class="fl_right">
             <ul class="nospace">
@@ -65,7 +75,7 @@
     <button class="dropbtn">Account</button>
   <div class="dropdown-content">
     <a href="signin_form.php">Sign In</a>
-    <a href="#">Sign Up</a>
+    <a href="signup_form.php">Sign Up</a>
     
 
   </div>

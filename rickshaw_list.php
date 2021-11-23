@@ -76,7 +76,7 @@ if (!isset($_SESSION['loggedin'])){
                                                     <option value="van_cer">Van</option>
                                                     
                                                 </select>                                            
-                                                <input type="submit" value="Search" />
+                                                <input type="submit" value="Search" /></strong>
 
     
                       </form>

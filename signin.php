@@ -1,5 +1,4 @@
 <?php 
-
 session_start();
 	if($_POST){
 		$email 	  = $_POST['email'];
@@ -10,13 +9,14 @@ session_start();
 		}
 		
 	if($email == ''){
-				$_SESSION['msg']= 'Please insert your Email.<br>';
+				$_SESSION['msg']= '<i style="color:red;font-size:20px;font-family:calibri;">Please Insert Your Email.</i>.<br><br>';
 				header('location:signin_form.php');
 				exit;
 		}
 		
 	if($password == ''){
-			$_SESSION['msg']= 'Please insert your Password.<br>';
+			$_SESSION['msg']= '<i style="color:red;font-size:20px;font-family:calibri ;">
+      Please insert your Password </i>.<br>';
 			header('location:signin_form.php');
 			exit;
 	}
@@ -45,7 +45,8 @@ session_start();
 				setcookie('loginCounter', true, time() + (60*3));
 				$_SESSION['count'] = 0;
 			}
-			$_SESSION['msg']= 'Invalid login!<br>';
+			$_SESSION['msg']= '<i style="color:red;font-size:20px;font-family:calibri ;">
+      Invalid login! </i>.<br><br>';
 			header('location:signin_form.php');
 		}	
 	}

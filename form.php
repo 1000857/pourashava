@@ -31,7 +31,7 @@ if (!isset($_SESSION['loggedin'])){
     <li><label>সেবা সমূহ <span class="required">*</span></label>
                                             
                                                 
-         <select name="seba_type" class="form-control" required="">
+         <select name="seba_type" class="field-select" required="">
                                                  <option value=""selected="">চিহ্নিত করুন</option>
                                                     <option value="nagorik_cer" >নাগরিকত্ব সনদ</option>
                                                     <option value="death_cer">মৃত্যু সনদ</option>

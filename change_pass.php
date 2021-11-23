@@ -7,12 +7,12 @@ $npass  	= $_POST['npass'];
 $mid      = $_SESSION['user_id'];
 
 if($cpass == ''){
-			$_SESSION['msg']= 'Insert your current password.<br>';
+			$_SESSION['msg']= '<i style="color:red; font-size:20px;font-family:calibri ;"> Insert your current password.</i><br>';
 			header('location:change_pass_form.php');
 			exit;
 		}
 if($npass == ''){
-			$_SESSION['msg']= 'Insert your new password.<br>';
+			$_SESSION['msg']= '<i style="color:red; font-size:20px;font-family:calibri ;"> Insert your new password. </i><br>';
 			header('location:change_pass_form.php');
 			exit;
 		}
@@ -28,10 +28,10 @@ Foreach ($output AS $row){
 if($cpass == $password){
 	$sql = "UPDATE `member` SET `Password`='$npass' WHERE id =$mid";
 	$conn->query($sql);
-	$_SESSION['msg']= 'Your password updated successfully.<br>';
+	$_SESSION['msg']= '<i style="color:green; font-size:20px;font-family:calibri ;"> Your password updated successfully.</i><br>';
 	header('location:index.php');
 }else{
-	$_SESSION['msg']= 'Incorrect current password.<br>';
+	$_SESSION['msg']= '<i style="color:red; font-size:20px;font-family:calibri ;"> Incorrect current password. </i><br>';
 	header('location:change_pass_form.php');
 }
 

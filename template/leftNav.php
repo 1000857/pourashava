@@ -58,15 +58,9 @@
                     </ul>
                     
                 </li>
-                <li>
-                    <a href="department_index.php"> <i class="menu-icon fa fa-building"></i>Humanitarian Allowance</a>
-                </li>
-                <li >
-                    <a href="batch_index.php"> <i class="menu-icon fa fa-tasks"></i>Manage Batches</a>
-                </li>
-                <li>
-                    <a href="#"> <i class="menu-icon fa fa-user"></i>Application</a>
-                </li>
+                
+                
+              
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Application</a>
                     <ul class="sub-menu children dropdown-menu">
@@ -76,7 +70,9 @@
                         <li><i class="fa fa-eye"></i><a href="house_permission_list.php">House/Building Permission</a></li>
                     </ul>
                 </li>
-
+                <li class="active">
+                    <a href="notice_form.php"> <i class="menu-icon fa fa-dashboard"></i>Add Notice </a>
+                </li>
 
             </ul>
         </div><!-- /.navbar-collapse -->

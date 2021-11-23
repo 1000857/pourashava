@@ -127,20 +127,21 @@ if (!isset($_SESSION['loggedin'])){
                                             if ($service['is_approved'] =="") {
                                                 echo "Pending";
                                              
-                                            } elseif ($service['is_approved'] = 1) {
+                                            } elseif ($service['is_approved'] == 1) {
                                                 echo "Received";
                                             } 
                                         ?></td>
                                         <td>
-                                           
-
-                                            <a  href="tax_approved.php?appid=<?=$service['applicant_id']?>" class="btn btn-success btn-sm">
-                                                <i class="fa fa-check"> </i>Received
-                                            </a>
-
-                                            <a  href="view_tax_certificate.php?appid=<?=$service['id']?>" class="btn btn-info btn-sm">
+                                           <?php if ($service['is_approved'] == 1) { ?>
+                                               <a  href="view_tax_certificate.php?appid=<?=$service['id']?>" class="btn btn-info btn-sm">
                                                 <i class="fa fa-edit"></i>View
                                             </a>
+                                           <?php } else { ?>
+                                                <a  href="tax_approved.php?appid=<?=$service['applicant_id']?>" class="btn btn-success btn-sm">
+                                                    <i class="fa fa-check"> </i>Received
+                                                </a>
+
+                                            <?php } ?>
                                             
 
 

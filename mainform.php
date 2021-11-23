@@ -31,14 +31,14 @@ if($_POST){
 
 
     if($seba_type == ''){
-        $_SESSION['msg']= 'Please Select Service Type.<br>';
+        $_SESSION['msg']= '<i style="color:red; font-size:20px;font-family:calibri ;"> Please Select Service Type.</i><br>';
         header('location:form.php');
         exit;
     }
 
 
     if($fname == ''){
-        $_SESSION['msg']= 'Please insert your First name.<br>';
+        $_SESSION['msg']= '<i style="color:red;margin-left:400px;font-size:20px;font-family:calibri ;"> Please insert your First name.</i><br>';
         header('location:form.php');
         exit;
     }

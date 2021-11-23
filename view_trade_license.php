@@ -71,9 +71,12 @@ if(isset($_SESSION['files'])){
 ?>
 
 
-<div id="print" style="width:795px; height:890px; padding:30px; margin-left: 120px;  border: 0px solid #787878">
+<div id="print" style="width:795px; height:1028px; padding:30px; margin-left: 46px;  border: 0px solid #787878">
 
 <div style="width:944px; height:990px; padding:55px; TEXT-ALIGN: justify; border: 5px solid #787878">
+        <span style="margin-left:358px;">
+        <img  style="height:90px" src="images/bd.png" alt="">
+       </span></br>
        <span style="font-size:40px; font-weight:bold; margin-left:145px;">
         DAUDKANDI POURASHAVA
        </span></br>
@@ -87,10 +90,10 @@ if(isset($_SESSION['files'])){
         DISTRICT: CUMILLA
        </span></br></br>
        <span style="font-size:20px; font-weight:bold; margin-left:282px;">
-        <span style="font-size:40px; font-weight:bold; margin-left:150px;">TRADE LICENSE </span><br/><br/><br/><br/>
+        <span style="font-size:20px; font-weight:bold; margin-left:53px;">TRADE LICENSE </span><br/><br/>
        </span>
  
-       <br><br><br><br>
+       <br><br>
 
        
 

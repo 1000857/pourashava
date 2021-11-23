@@ -71,9 +71,12 @@ if(isset($_SESSION['files'])){
 ?>
 
 
-<div id="print" style="width:795px; height:890px; padding:30px; margin-left: 120px;  border: 0px solid #787878">
+<div id="print" style="width:795px; height:1028px; padding:30px; margin-left: 46px;  border: 0px solid #787878">
 
 <div style="width:944px; height:990px; padding:55px; TEXT-ALIGN: justify; border: 5px solid #787878">
+        <span style="margin-left:358px;">
+        <img  style="height:90px" src="images/bd.png" alt="">
+       </span></br>
        <span style="font-size:40px; font-weight:bold; margin-left:145px;">
         DAUDKANDI POURASHAVA
        </span></br>
@@ -101,7 +104,7 @@ if(isset($_SESSION['files'])){
            
        </span>
  
-       <br><br><br><br>
+       <br><br><br>
 
        <?php if ($service['service_name'] == 'ch_cer') { ?>
 
@@ -109,7 +112,8 @@ if(isset($_SESSION['files'])){
        <br><br>
        <span style="font-size:20px">To the best of my knowledge, this person bears a good moral character and is not involved in such activities which are against the state freedom and peace.</span><br/><br/>
        <span style="font-size:20px">I wish all success and prosperity.</span> <br/><br/><br/><br/><br/><br/>
-       <span style="font-size:15px; margin-left:500px; font-style: italic;">SIGN OF MAYOR</span> <br/><br/>
+       <span style="font-size:15px; margin-left:20px; font-style: italic;">DATE:__________________</span>
+       <span style="font-size:15px; margin-left:470px; font-style: italic;">SIGN OF MAYOR</span> <br/><br/>
 
        <?php } elseif ($service['service_name'] == 'nagorik_cer') { ?><br>
            
@@ -123,7 +127,7 @@ if(isset($_SESSION['files'])){
            <span style="font-size:20px"; text-align:left; >This is to certify that <b><?= $service['first_name']?> <?= $service['last_name']?></b> son of <b><?= $service['father']?></b> & <b><?= $service['mother']?></b>, Vill-<b> <?= $service['permanent_village']?></b>,UPO- <b> <?= $service['permanent_upozilla']?></b>,THA- <b><?= $service['permanent_thana']?></b>, DIST- <b><?= $service['permanent_district']?></b>, is known to me. This person is a citizen of Bangladesh by birth and permanent citizen of <b> <?= $service['permanent_upozilla']?></b>.</span>
        <br><br>
        <span style="font-size:20px">To the best of my knowledge, this person bears a good moral character and is not involved in such activities which are against the state freedom and peace.</span><br/><br/>
-       <span style="font-size:20px">I wish all success and prosperity.</span> <br/><br/><br/><br/><br/><br/><br/><br/>
+       <span style="font-size:20px">I wish all success and prosperity.</span> <br/><br/><br/><br/><br/><br/>
        <span style="font-size:15px; margin-left:20px; font-style: italic;">DATE:__________________</span>
        <span style="font-size:15px; margin-left:470px; font-style: italic;">SIGN OF MAYOR</span> <br/><br/>
 
@@ -135,26 +139,7 @@ if(isset($_SESSION['files'])){
 echo $number;
 ?>
                                         
-  <!-- <tr>
-    <th>1</th>
-    <th>2</th>
-    <th>3</th>
-    <th>1</th>
-    <th>2</th>
-    <th>3</th>
-    <th>1</th>
-    <th>2</th>
-    <th>3</th>
-    <th>1</th>
-    <th>2</th>
-    <th>3</th>
-    <th>1</th>
-    <th>2</th>
-    <th>3</th>
-    <th>1</th>
-    <th>2</th>
-    <th>3</th>
-  </tr>-->
+  
 </span>
 <br/>
 

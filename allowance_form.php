@@ -12,10 +12,10 @@
     ?>
 <form action="allowance.php" method="POST" enctype="multipart/form-data">
 <ul class="form-style-1">
-    <li><label>Allowance Type <span class="required">*</span></label>
+    <li><label>Allowance Type <span class="field-select">*</span></label>
                                             
                                                 
-         <select name="seba_type" class="form-control" required="">
+         <select name="seba_type" class="field-select" required="">
                                                  <option value="" selected="">চিহ্নিত করুন</option>
                                                     <option value="long_term" >LONG TERM</option>
                                                     <option value="short_term">SHORT TERM</option>
@@ -30,7 +30,7 @@
      <li><label>Month <span class="required">*</span></label>
                                             
                                                 
-         <select name="month" class="form-control" required="">
+         <select name="month" class="field-select" required="">
                                                  <option value="" selected="">চিহ্নিত করুন</option>
                                                     <option value="January" >January</option>
                                                     <option value="February">February</option>

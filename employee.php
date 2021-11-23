@@ -160,7 +160,7 @@ $_SESSION['msg'] = '';
 
 
             $conn->query($sql);
-            $_SESSION['msg']= 'Registered Successfully. Thank You!<br>';
+            $_SESSION['msg']= '<i style="color:green; margin-left: 50px; font-size:20px;font-family:calibri ;"> Registered Successfully. Thank You!</i><br>';
             header('location:employee_signup_form.php');
         
     }

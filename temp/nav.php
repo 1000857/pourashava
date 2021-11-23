@@ -5,7 +5,8 @@
     <header id="header" class="hoc clear">
         <div id="logo" class="fl_left">
             <!-- ################################################################################################ -->
-            <h1><a href="index.php">Pourashava</a></h1>
+            <img src="images/bd.png" style="height: 60px; width: 60px;">
+            <h1><a href="index.php" style="margin-left: -22px;">Pourashava</a></h1>
             <!-- ################################################################################################ -->
         </div>
         <nav id="mainav" class="fl_right">

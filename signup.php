@@ -15,63 +15,59 @@ if($_POST){
 
 
    if($fname == ''){
-       $_SESSION['msg']= 'Please insert your First name.<br>';
+       $_SESSION['msg']= '<i style="color:red;font-size:20px;font-family:calibri ;">
+      Please insert your First name </i>.<br>';
         header('location:signup_form.php');
         exit;
         }
     if($lname == ''){
-       $_SESSION['msg']= 'Please insert your Surname.<br>';
+       $_SESSION['msg']= '<i style="color:red;font-size:20px;font-family:calibri ;">Please insert your Surname </i>.<br>';
         header('location:signup_form.php');
         exit;
     }
     if($bdate == ''){
-        $_SESSION['msg']= 'Please insert your Birth Day.<br>';
+        $_SESSION['msg']= '<i style="color:red;font-size:20px;font-family:calibri ;">Please insert your Birth Day </i>.<br>';
         header('location:signup_form.php');
         exit;
     }
     if($gender == ''){
-        $_SESSION['msg']= 'Please select your Gender.<br>';
+        $_SESSION['msg']= '<i style="color:red;font-size:20px;font-family:calibri ;"> Please select your Gender </i>.<br>';
         header('location:signup_form.php');
         exit;
     }
     if($email == ''){
-        $_SESSION['msg']= 'Please insert your email.<br>';
+        $_SESSION['msg']= '<i style="color:red;font-size:20px;font-family:calibri ;"> Please insert your email </i>.<br>';
         header('location:signup_form.php');
         exit;
     }
     if($phone == ''){
-        $_SESSION['msg']= 'Please insert your Phone Number.<br>';
+        $_SESSION['msg']= '<i style="color:red;font-size:20px;font-family:calibri ;"> Please Insert Your Phone Number </i>.<br>';
         header('location:signup_form.php');
         exit;
     }
     if($password == ''){
-        $_SESSION['msg']= 'Please Enter a Password.<br>';
+        $_SESSION['msg']= '<i style="color:red;font-size:20px;font-family:calibri ;"> Please Enter a Password </i>.<br>';
         header('location:signup_form.php');
         exit;
     }
-//    if($subject == ''){
-//        $_SESSION['msg']= 'Please Enter Your Job Post.<br>';
-//        header('location:signup_form.php');
-//        exit;
-//    }
-//
+
     if (strlen($password ) <= '8') {
-        $_SESSION['msg']= 'Your Password Must Contain At Least 8 Characters!<br>';
+        $_SESSION['msg']= '<i style="color:red;font-size:20px;font-family:calibri ;"> Your Password Must Contain At Least 8 Characters! </i> <br>';
         header('location:signup_form.php');
         exit;
     }
     elseif(!preg_match("#[0-9]+#",$password)) {
-        $_SESSION['msg']= 'Your Password Must Contain At Least 1 Number!<br>';
+        $_SESSION['msg']= '<i style="color:red;font-size:20px;font-family:calibri ;"> Your Password Must Contain At Least 1 Number!</i><br>';
         header('location:signup_form.php');
         exit;
     }
     elseif(!preg_match("#[A-Z]+#",$password)) {
-        $_SESSION['msg']= 'Your Password Must Contain At Least 1 Capital Letter!<br>';
+        $_SESSION['msg']= '<i style="color:red;font-size:20px;font-family:calibri ;"> Your Password Must Contain At Least 1 Capital Letter! </i><br>';
         header('location:signup_form.php');
         exit;
     }
     elseif(!preg_match("#[a-z]+#",$password)) {
-        $_SESSION['msg']= 'Your Password Must Contain At Least 1 Lowercase Letter!<br>';
+        $_SESSION['msg']= '<i style="color:red;font-size:20px;font-family:calibri ;"> Your Password Must Contain At Least 1 Lowercase Letter! </i><br>';
         header('location:signup_form.php');
         exit;
     } else {
@@ -93,7 +89,7 @@ if($_POST){
 
 
             $conn->query($sql);
-            $_SESSION['msg']= 'Registered Successfully. Thank You!<br>';
+            $_SESSION['msg']= '<i style="color:green;font-size:20px;font-family:calibri ;"> Registered Successfully. Thank You! </i><br>';
             header('location:signup_form.php');
         }
     }

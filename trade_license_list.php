@@ -102,23 +102,6 @@ if (!isset($_SESSION['loggedin'])){
                                 <th>Birth Date</th>
                                 <th>Status</th>
                                 
-                                 <!--<th>Occupassion</th> 
-                                <th>Education Qualification</th>
-                                <th>Religion</th>
-                                <th>Present Village</th> 
-                                <th>Present Ward</th>
-                                <th>Present Upazilla</th>
-                                <th>Present Thana</th>
-                                <th>Present District</th>
-                                <th>Permanent Village</th>
-                                <th>Permanent Ward</th>
-                                <th>Permanent Upazilla</th>
-                                <th>Permanent Thana</th>
-                                <th>Permanent District</th>
-                                <th>Phone</th>
-                                <th>Email</th>
-                                <th>Attachment</th>
-                                <th>Photo</th>-->
                             </tr>
                             </thead>
                             <tbody>
@@ -128,7 +111,15 @@ if (!isset($_SESSION['loggedin'])){
                                     <tr>
                                         <td><?= $serial++?></td>
                                         <td><img  style="height:90px" src="images/application/trade/<?= $service['pic']?>" alt=""></td>
-                                        <td><?= $service['type']?></td>
+                                        <td><?php 
+                                            if ($service['type'] == 'single') {
+                                                echo "Single Business";
+                                            } elseif ($service['type'] == 'double') {
+                                                echo "Partnership";
+                                            } elseif ($service['type'] == "company") {
+                                                echo "Industrial";
+                                            } 
+                                        ?></td>
                                         <td><?= $service['owner_name']?></td>
                                         
                                         <td><?= $service['father']?></td>

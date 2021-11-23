@@ -58,34 +58,29 @@ if (!isset($_SESSION['loggedin'])){
     
 ?>
 
-    <div class="content mt-3">
-        <div class="row">
+     <div class="content mt-3">
+            <div class="animated fadeIn">
+                <div class="row">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
                         <form  action="form_search.php" method="GET">
                         <strong class="card-title">
-                            <label>সেবা সমূহ <span class="required"></span></label>
+                            <label>SERVICE LIST <span class="required"></span></label>
                                             
                                                 
-         <select name="seba_type" class="form-control" required="">
-                                                 <option value=""selected="">চিহ্নিত করুন</option>
-                                                    <option value="nagorik_cer" >নাগরিকত্ব সনদ</option>
-                                                    <option value="death_cer">মৃত্যু সনদ</option>
-                                                    <option value="ch_cer">চারিত্রিক সনদ</option>
-                                                    <option value="birth_cer">BIRTH CERTIFICATE</option>
-                                                    <option value="homeless">ভূমিহীন সনদ</option>
-                                                    
-                                                    <option value="disable">প্রকৃত বাকঁ ও শ্রবন প্রতিবন্ধী</option>
-                                                    <option value="hindu">সনাতন ধর্ম  অবলম্বী</option>
-                                                    <option value="permit">অনুমতি পত্র</option>
-                                                    <option value="transcript">প্রত্যয়ন পত্র</option>
-                                                </select></strong>
-                                            <input type="submit" value="Search" />
+                            <select name="seba_type" class="form-control" required="">
+                                <option value=""selected="">SELECT</option>
+                                <option value="nagorik_cer" >NATIONALITY CERTIFICATE</option>
+                                <option value="ch_cer">CHARACTER CERTIFICATE</option>
+                                <option value="birth_cer">BIRTH CERTIFICATE</option>
+                            </select>
+                        </strong>
+                        <input class="btn btn-warning btn-sm" type="submit" value="Search"/>
+                        </form>
 
-    
-                      </form>
                     </div>
+
                     <div class="card-body text-center">
                         <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                             <thead>
@@ -119,54 +114,40 @@ if (!isset($_SESSION['loggedin'])){
                                         <td><?= $service['nid']?></td>
                                         <td><?= $service['birth_day']?></td>
                                         <td><?= $service['gender']?></td>
-                                        <td>
+                                        
+                                        <td><span class="badge <?php if($service['is_approved'] == '1') {
+                                            echo 'badge-success';
+                                        } elseif($service['is_approved'] == '0'){
+                                            echo 'badge-danger';
+                                        } else {
+                                            echo 'badge-info';
+                                        } ?>">
                                         <?php 
                                             if ($service['is_approved'] == '1') {
-                                                echo "Approved";
+                                                echo "Varified";
                                             } elseif ($service['is_approved'] == '0') {
                                                 echo "Declined";
                                             } elseif ($service['is_approved'] == "") {
                                                 echo "Pending";
                                             } 
                                         ?>
-                                            
+                                            </span>
                                         </td>
-                                        <!--<td><?= $service['occupation']?></td>
-                                        <td><?= $service['education']?></td>
-                                        <td><?= $service['relegion']?></td>
-                                        <td><?= $service['present_village']?></td> 
-                                        <td><?= $service['present_ward']?></td>
-                                        <td><?= $service['present_upozilla']?></td>
-                                        <td><?= $service['present_thana']?></td>
-                                        <td><?= $service['present_district']?></td>
-                                        <td><?= $service['permanent_village']?></td>
-                                        <td><?= $service['permanent_ward']?></td>
-                                        <td><?= $service['permanent_upozilla']?></td>
-                                        <td><?= $service['permanent_thana']?></td>
-                                        <td><?= $service['permanent_district']?></td>
-                                        <td><?= $service['mobile']?></td>
-                                        <td><?= $service['email']?></td>
-                                        <td><?= $service['other']?></td>
-                                        <td><?= $service['pic']?></td>-->
-
-
-
-
-
+                                        
 
                                     
                                         <td>
-                                            <a  href="view_form.php?appid=<?=$service['id']?>" class="btn btn-info btn-sm">
-                                                <i class="fa fa-edit"></i>View
-                                            </a>
+                                        <a  href="view_form.php?appid=<?=$service['id']?>" class="btn btn-info btn-sm">
+                                            <i class="fa fas fa-file"></i> View
+                                        </a>
 
-                                            <a  href="public_approved.php?appid=<?=$service['id']?>" class="btn btn-success btn-sm">
-                                                <i class="fa fa-correct"></i>Approved
-                                            </a>
+                                        <a  href="public_approved.php?appid=<?=$service['id']?>" class="btn btn-success btn-sm">
+                                            <i class="fa fas fa-check"></i> 
+                                        </a>
 
-                                            <a  href="public_decline.php?appid=<?=$service['id']?>" class="btn btn-danger btn-sm">
-                                                <i class="fa fa-trash"></i>Decline
-                                            </a>
+                                        <a  href="public_decline.php?appid=<?=$service['id']?>" class="btn btn-danger btn-sm">
+                                            <i class="fa fas fa-times"></i> 
+                                        </a>
 
 
 
@@ -184,6 +165,7 @@ if (!isset($_SESSION['loggedin'])){
         <!--/.col-->
 
 
+    </div>
     </div> <!-- .content -->
 </div><!-- /#right-panel -->
 

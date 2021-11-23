@@ -139,26 +139,20 @@
                 <div class="col-sm-12 mb-6">
                   <div class="card h-100">
                     <div class="card-body">
-                      <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2">assignment</i>Project Status</h6>
-                      
-
-                      <div class="card-body text-center">
-                        <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+                      <h6 class="d-flex align-items-center mb-3">Project Status</h6>
+                        <div class="card-body text-center">
+                          <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                             <thead>
-                            <tr>
-                               
-                                
-                                <th>SL</th>
-                                <th>APPLICATION TYPE</th>
-                                <th>STATUS</th>
-                                <th>ACTION</th>
-                                
-                                 
+                            <tr>   
+                            <th>SL</th>
+                            <th>APPLICATION TYPE</th>
+                            <th>STATUS</th>
+                            <th>ACTION</th>
                             </tr>
                             </thead>
                             <tbody>
                                 <?php
-                                    foreach ($services as $service){
+                                foreach ($services as $service){
                                 ?>
                                     <tr>
                                         <td><?= $serial++?></td>
@@ -170,8 +164,8 @@
                                                 echo "Declined";
                                             } elseif ($service['is_approved'] == "") {
                                                 echo "Pending";
-                                            } 
-                                        ?></td>
+                                            } ?>
+                                        </td>
                                         
                                           <?php 
                                           if ($service['is_approved'] =='1'){ 
