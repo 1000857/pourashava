@@ -98,13 +98,14 @@ if (!isset($_SESSION['loggedin'])) {
                                         }
                                         ?>
                                             </span></td>
-                                    <?php if ($work['is_done'] == '1') { ?>
-                                    <td>
-                                        <a href="employee_work_done.php?appid=<?= $work['id'] ?>&cid=<?= $work['cid'] ?>"
-                                           class="btn btn-success btn-sm">
-                                            <i class="fa fa-check"> </i>Done
-                                        </a>
-                                    </td>
+                                    <?php if ($work['is_done'] != '1') {?>
+
+                                        <td>
+                                            <a href="employee_work_done.php?appid=<?= $work['id'] ?>&cid=<?= $work['cid'] ?>"
+                                               class="btn btn-success btn-sm">
+                                                <i class="fa fa-check"> </i>Done
+                                            </a>
+                                        </td>
                                     <?php } ?>
 
                                 </tr>
