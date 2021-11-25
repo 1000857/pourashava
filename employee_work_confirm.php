@@ -18,7 +18,7 @@ foreach($workss as $works)  {
  
 
 
-            $_SESSION['msg']= 'Success<br>';
+            $_SESSION['msg']= '<i style="color:green; font-size:20px;font-family:calibri ;"> Success.</i><br>';
             header('location:employee_assign_form.php');
 }  
 

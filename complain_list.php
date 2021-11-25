@@ -97,12 +97,10 @@
                                         
                                         
                                         <td>
-                                            <a  href="notice_update_form.php?noticeid=<?=$service['id']?>" class="btn btn-primary btn-sm">
-                                            <i class="fa fa-check"> </i>Edit
-                                            </a>
+                                            
 
-                                            <a  href="" class="btn btn-success btn-sm">
-                                            <i class="fa fa-check"> </i>Update
+                                            <a  href="employee_assign_form.php" class="btn btn-success btn-sm">
+                                            <i class="fa fa-check"> </i>Assign Staff
                                             </a>
 
                                             

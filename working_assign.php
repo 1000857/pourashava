@@ -97,13 +97,20 @@ if (!isset($_SESSION['loggedin'])){
                                         
                                         
                                         
-                                        <td><?php 
+                                        <td><span class="badge <?php if($user['is_done'] == '1') {
+                                            echo 'badge-success';
+                                        } elseif($user['is_done'] == ""){
+                                            echo 'badge-danger';
+                                        }  ?>">
+                                        <?php 
                                             if ($user['is_done'] == '1') {
                                                 echo "Completed";
-                                            }  elseif ($user['is_done'] == "") {
+                                            } 
+                                            elseif ($user['is_done'] == "") {
                                                 echo "Not Completed";
                                             } 
-                                        ?></td>
+                                        ?>
+                                            </span></td>
                                          <td>
                                               <a  href="employee_work_done.php?appid=<?=$user['employee_id']?>" class="btn btn-success btn-sm">
                                                 <i class="fa fa-check"> </i>Done
