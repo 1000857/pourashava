@@ -2,10 +2,14 @@
 	session_start();
 	if(isset($_GET['appid'])){
 			$app_id = $_GET['appid'];
+			$cid = $_GET['cid'];
 
 			
 			include_once 'db_con.php';
-			$conect = connect(); 
+			$conect = connect();
+
+            $sql1 = "UPDATE `complain` SET `status` = 'Completed' WHERE id = '$cid'";
+            $conect->query($sql1);
 			
 			$sql = "UPDATE `employee_assign` SET `is_done` = 1 WHERE id = '$app_id'";
 			

@@ -47,7 +47,7 @@ if (!isset($_SESSION['loggedin'])) {
     $conn   = connect();
     $userid = $_SESSION['user_id'];
 
-    $sql   = "SELECT c.description as description, e.id, e.date, e.amount, e.is_done
+    $sql   = "SELECT c.id as cid, c.description as description, e.id, e.date, e.amount, e.is_done
             FROM employee_assign e
             INNER JOIN complain c ON c.id = e.complain_id
             WHERE e.employee_id='$userid'";
@@ -73,7 +73,6 @@ if (!isset($_SESSION['loggedin'])) {
                                 <th>DATE</th>
                                 <th>BUDGET</th>
                                 <th>STATUS</th>
-
                             </tr>
                             </thead>
                             <tbody>
@@ -99,13 +98,14 @@ if (!isset($_SESSION['loggedin'])) {
                                         }
                                         ?>
                                             </span></td>
+                                    <?php if ($work['is_done'] == '1') { ?>
                                     <td>
-                                        <a href="employee_work_done.php?appid=<?= $work['id'] ?>"
+                                        <a href="employee_work_done.php?appid=<?= $work['id'] ?>&cid=<?= $work['cid'] ?>"
                                            class="btn btn-success btn-sm">
                                             <i class="fa fa-check"> </i>Done
                                         </a>
                                     </td>
-
+                                    <?php } ?>
 
                                 </tr>
 
