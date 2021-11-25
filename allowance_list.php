@@ -1,10 +1,4 @@
-<?php session_start(); ?>
-<?php
-if (!isset($_SESSION['loggedin'])){
-    header('location:signin_form.php');
-    exit;
-}
-?>
+
 <?php include_once 'template/_head.php'?>
 
 <body>
@@ -122,10 +116,7 @@ if (!isset($_SESSION['loggedin'])){
                                     <tr>
                                         <td><?= $serial++?></td>
                                         <td>
-                                           
                                               <input type="checkbox" id="allowance" name="allow[ ]" value=" <?=$service['id']?> "></br>Approved for Allowance<br>
-                                              
-                                           
                                             </td>
 
                                        

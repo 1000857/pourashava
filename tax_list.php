@@ -1,10 +1,4 @@
-<?php session_start(); ?>
-<?php
-if (!isset($_SESSION['loggedin'])){
-    header('location:signin_form.php');
-    exit;
-}
-?>
+
 <?php include_once 'template/_head.php'?>
 
 <body>
@@ -139,23 +133,7 @@ if (!isset($_SESSION['loggedin'])){
 
 
                                     
-                                        <!--<td>
-                                            <a  href="view_allowance.php?appid=<?=$service['id']?>" class="btn btn-info btn-sm">
-                                                <i class="fa fa-edit"></i>View
-                                            </a>
-
-                                            <a  href="trade_license_approved.php?appid=<?=$service['id']?>" class="btn btn-success btn-sm">
-                                                <i class="fa fa-correct"></i>Approved
-                                            </a>
-
-                                            <a  href="trade_license_decline.php?appid=<?=$service['id']?>" class="btn btn-danger btn-sm">
-                                                <i class="fa fa-trash"></i>Decline
-                                            </a>
-
-
-
-                                            
-                                        </td>-->
+                                      
                                     </tr>
                                  </form>
                                 <?php } ?>

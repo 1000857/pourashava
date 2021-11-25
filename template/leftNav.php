@@ -41,6 +41,24 @@
                     </ul>
                 </li>
                 <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>Work</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-list"></i><a href="employee_assign_form.php">Assign Work</a></li>
+                        <li><i class="fa fa-plus-circle"></i><a href="employee_assigned_work_list.php"> Assigned Work List</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>Complain</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-list"></i><a href="complain_list.php">Complain List</a></li>
+                        
+                        
+                        
+                    </ul>
+                </li>
+                <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>Humanitarian Allowance</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="fa fa-list"></i><a href="allowance_form.php">Allowance Form</a></li>
@@ -54,7 +72,7 @@
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="fa fa-list"></i><a href="tax_list.php">Issue Tax</a></li>
                         <li><i class="fa fa-plus-circle"></i><a href="tax_confirmed_list.php">Tax List</a></li>
-                        <li><i class="fa fa-list"></i><a href="allowance_confirmed_list.php">Allowance Confirmed</a></li>
+                        
                     </ul>
                     
                 </li>
@@ -70,8 +88,14 @@
                         <li><i class="fa fa-eye"></i><a href="house_permission_list.php">House/Building Permission</a></li>
                     </ul>
                 </li>
-                <li class="active">
-                    <a href="notice_form.php"> <i class="menu-icon fa fa-dashboard"></i>Add Notice </a>
+                
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Notice Board</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-list"></i><a href="notice_form.php">Add Notice</a></li>
+                        <li><i class="fa fa-eye"></i><a href="notice_list.php">Notice List</a></li>
+                        
+                    </ul>
                 </li>
 
             </ul>

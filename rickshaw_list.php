@@ -1,10 +1,4 @@
-<?php session_start(); ?>
-<?php
-if (!isset($_SESSION['loggedin'])){
-    header('location:signin_form.php');
-    exit;
-}
-?>
+
 <?php include_once 'template/_head.php'?>
 
 <body>
@@ -82,7 +76,8 @@ if (!isset($_SESSION['loggedin'])){
                       </form>
                     </div>
                     <div class="card-body text-center">
-                        <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+
+                        <table id="bootstrap-data-table-export" class="table table-striped table-bordered row">
                             <thead>
                             <tr>
                                 <th class="text-center" style="width: 3px;">Sl</th>

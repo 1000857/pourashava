@@ -1,10 +1,4 @@
-<?php session_start(); ?>
-<?php
-if (!isset($_SESSION['loggedin'])){
-    header('location:signin_form.php');
-    exit;
-}
-?>
+
 <?php include_once 'template/_head.php'?>
 
 <body>
@@ -122,35 +116,19 @@ if (!isset($_SESSION['loggedin'])){
                                             } 
                                             elseif ($service['Post'] == '10') {
                                                 echo "Doctor";
+                                            }
+                                            elseif ($service['Post'] == '30') {
+                                                echo "Cleaner";
+                                            }
+                                            elseif ($service['Post'] == '31') {
+                                                echo "Sweeper";
                                             } 
+                                            elseif ($service['Post'] == '32') {
+                                                echo "Electrician";
+                                            }   
                                         ?></td>
                                         
-                                            
-                                        
-                                        <!--<td><?= $service['occupation']?></td>
-                                        <td><?= $service['education']?></td>
-                                        <td><?= $service['relegion']?></td>
-                                        <td><?= $service['present_village']?></td> 
-                                        <td><?= $service['present_ward']?></td>
-                                        <td><?= $service['present_upozilla']?></td>
-                                        <td><?= $service['present_thana']?></td>
-                                        <td><?= $service['present_district']?></td>
-                                        <td><?= $service['permanent_village']?></td>
-                                        <td><?= $service['permanent_ward']?></td>
-                                        <td><?= $service['permanent_upozilla']?></td>
-                                        <td><?= $service['permanent_thana']?></td>
-                                        <td><?= $service['permanent_district']?></td>
-                                        <td><?= $service['mobile']?></td>
-                                        <td><?= $service['email']?></td>
-                                        <td><?= $service['other']?></td>
-                                        <td><?= $service['pic']?></td>-->
-
-
-
-
-
-
-                                    
+                            
                                         <td>
                                             
 

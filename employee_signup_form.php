@@ -1,10 +1,4 @@
-<?php session_start(); ?>
-<?php
-if (!isset($_SESSION['loggedin'])){
-    header('location:signin_form.php');
-    exit;
-}
-?>
+
 <?php include_once 'template/_head.php'?>
 
 <body>
@@ -46,6 +40,9 @@ if (!isset($_SESSION['loggedin'])){
                 <option value="8">Ass. Architect</option>
                 <option value="9">Administrative Officer</option>
                 <option value="10">Doctor</option>
+                <option value="30">Cleaner</option>
+                <option value="31">Sweeper</option>
+                <option value="32">Electrician</option>
                 
             </select>
         </div>

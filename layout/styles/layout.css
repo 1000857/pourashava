@@ -60,16 +60,16 @@
 
 /* Page Intro
 --------------------------------------------------------------------------------------------------------------- */
-#pageintro{padding:200px 0;}
+#pageintro{position: relative}
 
-#pageintro article{display:block; max-width:60%; text-transform:capitalize;}
+#pageintro article{display:block; max-width:60%; text-transform:capitalize;position: absolute; top: 254px; left: 82px;}
 #pageintro .heading{font-size:5rem;}
 #pageintro footer{margin-top:50px;}
 
 
 /* Content Area
 --------------------------------------------------------------------------------------------------------------- */
-.container{padding:80px 0;}
+.container{padding:180px 0;}
 
 /* Content */
 .container .content{}

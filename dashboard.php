@@ -1,14 +1,6 @@
-<?php session_start(); ?>
-<?php
-if (!isset($_SESSION['loggedin'])){
-    header('location:signin_form.php');
-    exit;
-}
-?>
 <?php include_once 'template/_head.php'?>
 
 <body>
-
 
     <!-- Left Panel -->
         <?php include_once 'template/leftNav.php'?>
@@ -42,17 +34,6 @@ if (!isset($_SESSION['loggedin'])){
         </div>
 
         <div class="content mt-3">
-
-            <div class="col-sm-12">
-                <div class="alert  alert-success alert-dismissible fade show" role="alert">
-                    <span class="badge badge-pill badge-success">Success</span> You successfully read this important alert message.
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            </div>
-
-
             <div class="col-sm-6 col-lg-3">
                 <div class="card text-white bg-flat-color-1">
                     <div class="card-body pb-0">
@@ -413,20 +394,6 @@ if (!isset($_SESSION['loggedin'])){
                     </div>
                 </div>
             </div>
-
-            <div class="col-xl-6">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>World</h4>
-                    </div>
-                    <div class="Vector-map-js">
-                        <div id="vmap" class="vmap" style="height: 265px;"></div>
-                    </div>
-                </div>
-                <!-- /# card -->
-            </div>
-
-
         </div> <!-- .content -->
     </div><!-- /#right-panel -->
 

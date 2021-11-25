@@ -20,7 +20,7 @@
         <div class="col-sm-4">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>Salary Confirmation List</h1>
+                    <h1>Assigned Work</h1>
                 </div>
             </div>
         </div>
@@ -38,33 +38,19 @@
     ?>
 <?php 
                                     
-    if(isset($_SESSION['files'])){
-        $services = $_SESSION['files'];
-        unset($_SESSION['files']);
-        $serial = 1;
-    }else{
+   
     include_once 'db_con.php';
     $conn = connect();
-    $sql = "SELECT employee.id as id, employee.First_name as fname, employee.Email as Email, employee.Phone as Phone, employee.Post as Post, salary_confirmed.month, salary_confirmed.amount, salary_confirmed.is_approved, salary_confirmed.employee_id FROM salary_confirmed
-        INNER JOIN employee ON salary_confirmed.employee_id = employee.employee_id";
+    $sql = "SELECT employee.First_name , employee.Post, employee.Phone, employee_assign.work,  employee_assign.date, employee_assign.amount, employee_assign.is_done FROM employee
+        INNER JOIN employee_assign ON employee.id = employee_assign.employee_id";
     $services = $conn -> query ($sql);
     $serial = 1;
-    }
+   
+       
     
 ?>
                     
-<form action="employee_salary_confirm_search.php" method="GET">
-        <div class="container">
-                       <div class="search-box">
-
-                          <input type="text" name="search" class="search-input" placeholder="Search..">
-
-                          <button class="btn btn-info">
-                            <i class="fa fa-search" ></i>
-                          </button>
-                       </div>
-                    </div>
-       </form>
+    
     <div class="content mt-3">
         
        
@@ -73,12 +59,6 @@
             <div class="col-md-12">
 
                 <div class="card">
-
-                    
-                  
-                  
-                        
-                       
                         
 
                     <div class="card-body text-center">
@@ -91,13 +71,12 @@
                                 
                                 
                                 <th>Name</th>
-                                <th>Email</th>
+                                <th>Work Title</th>
+                                <th>Working Date</th>
+                                <th>Budget</th>
                                 <th>Post</th>
-                                <th>Phone</th>
-                                <th>Month</th>
-                                <th>Amount</th>
                                 <th>Status</th>
-                                <th>Action</th>
+                               
                                 
                             </tr>
                             </thead>
@@ -110,8 +89,10 @@
                                        
 
                                        
-                                        <td><?= $service['fname']?></td>
-                                        <td><?= $service['Email']?></td>
+                                        <td><?= $service['First_name']?></td>
+                                        <td><?= $service['work']?></td>
+                                        <td><?= $service['date']?></td>
+                                        <td><?= $service['amount']?></td>
                                         <td><?php 
                                             if ($service['Post'] == '4') {
                                                 echo "Mayor";
@@ -130,31 +111,37 @@
                                             elseif ($service['Post'] == '9') {
                                                 echo "Administrative Officer";
                                             } 
-                                        ?></td>
-                                        <td><?= $service['Phone']?></td>
-                                        <td><?= $service['month']?></td>
-                                        <td><?= $service['amount']?></td>
-                                        
-                                        <td><?php 
-                                            if ($service['is_approved'] =="") {
-                                                echo "Pending";
-                                             
-                                            } elseif ($service['is_approved'] = 1) {
-                                                echo "Received";
+                                            elseif ($service['Post'] == '10') {
+                                                echo "Doctor";
+                                            }
+                                            elseif ($service['Post'] == '30') {
+                                                echo "Cleaner";
+                                            }
+                                            elseif ($service['Post'] == '31') {
+                                                echo "Sweeper";
                                             } 
+                                            elseif ($service['Post'] == '32') {
+                                                echo "Electrician";
+                                            }   
                                         ?></td>
-                                        <td>
-                                           
-
-                                            <a  href="employee_salary_approved.php?appid=<?=$service['employee_id']?>" class="btn btn-success btn-sm">
-                                                <i class="fa fa-check"> </i>Received
-                                            </a>
-
-                                            
-
-
-                                            
-                                        </td>
+                                        <td><span class="badge <?php if($service['is_done'] == '1') {
+                                            echo 'badge-success';
+                                        } elseif($service['is_done'] == ""){
+                                            echo 'badge-danger';
+                                        }  ?>">
+                                        <?php 
+                                            if ($service['is_done'] == '1') {
+                                                echo "Completed";
+                                            } 
+                                            elseif ($service['is_done'] == "") {
+                                                echo "Not Completed";
+                                            } 
+                                        ?>
+                                            </span></td>
+                                        
+                                        
+                                        
+                                        
                                         
                                         
                                     </tr>

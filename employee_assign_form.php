@@ -20,7 +20,7 @@
         <div class="col-sm-4">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>Salary Confirmation List</h1>
+                    <h1>Assign Employee</h1>
                 </div>
             </div>
         </div>
@@ -45,40 +45,36 @@
     }else{
     include_once 'db_con.php';
     $conn = connect();
-    $sql = "SELECT employee.id as id, employee.First_name as fname, employee.Email as Email, employee.Phone as Phone, employee.Post as Post, salary_confirmed.month, salary_confirmed.amount, salary_confirmed.is_approved, salary_confirmed.employee_id FROM salary_confirmed
-        INNER JOIN employee ON salary_confirmed.employee_id = employee.employee_id";
+    $sql = "SELECT * FROM employee";
     $services = $conn -> query ($sql);
     $serial = 1;
     }
     
 ?>
-                    
-<form action="employee_salary_confirm_search.php" method="GET">
-        <div class="container">
-                       <div class="search-box">
 
-                          <input type="text" name="search" class="search-input" placeholder="Search..">
-
-                          <button class="btn btn-info">
-                            <i class="fa fa-search" ></i>
-                          </button>
-                       </div>
-                    </div>
-       </form>
     <div class="content mt-3">
-        
-       
-
         <div class="row">
             <div class="col-md-12">
-
                 <div class="card">
-
                     
-                  
-                  
+                    <form action="employee_work_confirm.php" method="POST">
+                        <div class="card-header">
                         
-                       
+                        <strong class="card-title">
+                            <label>DATE: <span class="required"></span></label>
+                            <input type="date" name="date" class="field-long" placeholder="Insert Date" />   
+                            <label>WORK: <span class="required"></span></label>
+                            <input type="text" name="title" class="field-long" placeholder="Write Working Topic" />              
+                                                
+                    
+                        
+                            <label>AMOUNT:<span class="required">*</span></label>
+                            <input type="number" name="amount" class="field-long" placeholder="Insert Amount" /></br></strong>
+        
+                      
+                        
+                    
+                    </div>
                         
 
                     <div class="card-body text-center">
@@ -87,17 +83,18 @@
                         <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                             <thead>
                             <tr>
-                                <th class="text-center" style="width: 3px;">Sl</th>
-                                
-                                
+                                 <th class="text-center" style="width: 3px;">Sl</th>
+                                 <th>Action</th>
+                                <th>Photo</th>
+                                <th>Employee ID</th>
                                 <th>Name</th>
                                 <th>Email</th>
-                                <th>Post</th>
+                                <th>Birth Date</th>
+                                <th>Gender</th>
                                 <th>Phone</th>
-                                <th>Month</th>
-                                <th>Amount</th>
-                                <th>Status</th>
-                                <th>Action</th>
+                                <th>Post</th>
+                                
+                                
                                 
                             </tr>
                             </thead>
@@ -107,12 +104,21 @@
                                 ?>
                                     <tr>
                                         <td><?= $serial++?></td>
-                                       
-
-                                       
-                                        <td><?= $service['fname']?></td>
+                                        <td>
+                                              <input type="checkbox" id="allowance" name="work[ ]" value=" <?=$service['id']?> "></br>Assign<br>
+                                            </td>
+                                        <td><img  style="height:90px" src="images/employee/<?= $service['Pic']?>" alt=""></td>
+                                        <td><?= $service['Employee_id']?></td>
+                                        <td><?= $service['First_name']?></td>
+                                        
+                                        
                                         <td><?= $service['Email']?></td>
-                                        <td><?php 
+                                        <td><?= $service['Birthday']?></td>
+                                        <td><?= $service['Gender']?></td>
+                                        
+                                        <td><?= $service['Phone']?></td>
+                                        
+                                        <td> <?php 
                                             if ($service['Post'] == '4') {
                                                 echo "Mayor";
                                             } elseif ($service['Post'] == '5') {
@@ -130,40 +136,29 @@
                                             elseif ($service['Post'] == '9') {
                                                 echo "Administrative Officer";
                                             } 
-                                        ?></td>
-                                        <td><?= $service['Phone']?></td>
-                                        <td><?= $service['month']?></td>
-                                        <td><?= $service['amount']?></td>
-                                        
-                                        <td><?php 
-                                            if ($service['is_approved'] =="") {
-                                                echo "Pending";
-                                             
-                                            } elseif ($service['is_approved'] = 1) {
-                                                echo "Received";
+                                            elseif ($service['Post'] == '10') {
+                                                echo "Doctor";
+                                            }elseif ($service['Post'] == '30') {
+                                                echo "Cleaner";
+                                            }
+                                            elseif ($service['Post'] == '31') {
+                                                echo "Sweeper";
                                             } 
+                                            elseif ($service['Post'] == '32') {
+                                                echo "Electrician";
+                                            }  
                                         ?></td>
-                                        <td>
-                                           
-
-                                            <a  href="employee_salary_approved.php?appid=<?=$service['employee_id']?>" class="btn btn-success btn-sm">
-                                                <i class="fa fa-check"> </i>Received
-                                            </a>
-
-                                            
-
-
-                                            
-                                        </td>
                                         
+                            
                                         
+                                       
                                     </tr>
-                                 
+                                 </form>
                                 <?php } ?>
                             </tbody>
                         </table>
                         
-    
+    <input class="btn btn-success btn-sm" type="submit" name="Submit" value="Submit" />
                     </div>
                 </div>
             </div>

@@ -32,18 +32,11 @@ if (!isset($_SESSION['loggedin'])){
                                             
                                                 
          <select name="seba_type" class="field-select" required="">
-                                                 <option value=""selected="">চিহ্নিত করুন</option>
-                                                    <option value="nagorik_cer" >নাগরিকত্ব সনদ</option>
-                                                    <option value="death_cer">মৃত্যু সনদ</option>
-                                                    <option value="ch_cer">চারিত্রিক সনদ</option>
-                                                    <option value="birth_cer">BIRTH CERTIFICATE</option>
-                                                    <option value="homeless">ভূমিহীন সনদ</option>
-                                                    
-                                                    <option value="disable">প্রকৃত বাকঁ ও শ্রবন প্রতিবন্ধী</option>
-                                                    <option value="hindu">সনাতন ধর্ম  অবলম্বী</option>
-                                                    <option value="permit">অনুমতি পত্র</option>
-                                                    <option value="transcript">প্রত্যয়ন পত্র</option>
-                                                </select>
+         <option value=""selected="">চিহ্নিত করুন</option>
+         <option value="nagorik_cer" >NATIONALITY CERTIFICATE</option> 
+         <option value="ch_cer">CHARACTER CERTIFICATE</option>
+         <option value="birth_cer">BIRTH CERTIFICATE</option>
+         </select>
                                             
 
     <li>

@@ -1,10 +1,4 @@
-<?php session_start(); ?>
-<?php
-if (!isset($_SESSION['loggedin'])){
-    header('location:signin_form.php');
-    exit;
-}
-?>
+
 <?php include_once 'template/_head.php'?>
 
 <body>
@@ -21,7 +15,7 @@ if (!isset($_SESSION['loggedin'])){
     <?php include_once 'template/header.php'?>
     <!-- Header-->
 
-<div class="col-lg-10">
+<div class="col-lg-12">
     <div class="card">
     <div class="card-header">
         <strong>CREATE DOCTOR APPOINMENT SLOT</strong>

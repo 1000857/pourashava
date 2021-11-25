@@ -26,20 +26,20 @@
                 </li>
                 <li><a class="drop" href="#">LICENSE APPLICATIONS</a>
                     <ul>
-                        <li><a href="rickshaw_form.php">Rickshaw LICENSE</a></li>
-                        <li><a class="drop" href="#">Trade License</a>
+                        <li><a href="trade_license_form.php">TRADE LICENSE</a></li>
+                        <li><a class="drop" href="#">RICKSHAW LICENSE</a>
                             <ul>
-                                <li><a href="trade_license_form.php">Trade License</a></li>
-                                <li><a href="#">Level 3</a></li>
-                                <li><a href="#">Level 3</a></li>
+                                
+                                <li><a href="rickshaw_form.php">Rickshaw LICENSE</a></li>
+                                <li><a href="rickshaw_form.php">VAN LICENSE</a></li>
                             </ul>
                         </li>
-                        <li><a href="rickshaw_form.php">VAN LICENSE</a></li>
+                        
                         <li><a href="house_permission_form.php">HOUSE PERMISSION</a></li>
                     </ul>
                 </li>
                 <li><a href="employee_portal.php">Portal</a></li>
-                <li><a href="#">Link Text</a></li>
+                <li><a href="doctor_list.php">DOCTOR APPOINTMENT</a></li>
                 <li><a href="#">Link Text</a></li>
             </ul>
             <!-- ################################################################################################ -->

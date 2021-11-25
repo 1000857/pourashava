@@ -1,10 +1,4 @@
-<?php session_start(); ?>
-<?php
-if (!isset($_SESSION['loggedin'])){
-    header('location:signin_form.php');
-    exit;
-}
-?>
+
 
 <?php include_once 'template/_head.php'?>
 
@@ -71,7 +65,7 @@ if(isset($_SESSION['files'])){
 ?>
 
 
-<div id="print" style="width:795px; height:1040px; padding:30px; margin-left: 46px;  border: 0px solid #787878">
+<div id="print" style="width:795px; height:1090px; padding:30px; margin-left: 46px;  border: 0px solid #787878">
 
 <div style="width:944px; height:1060px; padding:55px; TEXT-ALIGN: justify; border: 5px solid #787878">
         <span style="margin-left:358px;">

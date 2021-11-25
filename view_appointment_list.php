@@ -52,12 +52,10 @@ if (!isset($_SESSION['loggedin'])){
                 <div class="col-md-12">
                     <!-- Advanced Tables -->
                     <div class="card">
-                        <div class="card-action">
-                            
-                        </div>
-                        <div class="card-content">
+                        
+                        <div class="card-body text-center">
                             <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <table class="table table-striped table-bordered" id="dataTables-example">
                                     <thead>
                                         <tr>
                                             <th>Patient First Name</th>
