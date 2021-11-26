@@ -50,6 +50,15 @@
                     </ul>
                 </li>
                 <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>Work Distribution</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-plus-circle"></i><a href="work_distribution_form.php">Distribute Work</a></li>
+                        <li><i class="fa fa-list"></i><a href="work_distribution_list.php"> Distributed Work List</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>Complain</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="fa fa-list"></i><a href="complain_list.php">Complain List</a></li>

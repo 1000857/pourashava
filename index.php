@@ -16,12 +16,7 @@
       <h3 class="heading">Daudkandi Pourashava</h3>
       
       <p>Et malesuada fames ac turpis egestas duis rutrum eros ut sapien in hac habitasse platea dictumst aliquam venenatis leo et orci ut pretium odio eu nisi nulla at.</p>
-      <footer>
-        <ul class="nospace inline pushright">
-          <li><a class="btn" href="#">Egestas</a></li>
-          <li><a class="btn inverse" href="#">Tristique</a></li>
-        </ul>
-      </footer>
+      
     </article>
     <!-- ################################################################################################ -->
   </div>
@@ -62,7 +57,8 @@
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="bgded overlay" style="background-image:url('images/demo/backgrounds/01.png');">
+<div class="bgded overlay" style="
+    background-image: linear-gradient(135deg, #09203f 10%, #537895 100%);">
   <section class="hoc container clear"> 
     <!-- ################################################################################################ -->
      <?php 
@@ -78,7 +74,7 @@
         <?php
                                     foreach ($services as $service){
                                 ?>
-        <li><a href="#"><i class="fas fa-equals"></i></a>
+        <li><a href="#"><i class="fas fa-file"></i></a>
           <h6 class="heading"><?= $service['title']?></h6>
           <p><?= $service['description']?></p>
         </li>
@@ -173,7 +169,9 @@
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="bgded overlay" style="background-image:url('images/demo/backgrounds/01.png');">
+<div class="bgded overlay" style="
+    background-image: linear-gradient(135deg, #09203f 10%, #537895 100%)
+;">
   <section id="testimonials" class="hoc container clear"> 
     <!-- ################################################################################################ -->
     <article>
@@ -188,72 +186,7 @@
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row2">
-  <section class="hoc container clear"> 
-    <!-- ################################################################################################ -->
-    <div class="sectiontitle">
-      <p class="nospace font-xs">Mollis eu commodo eu dui quisque</p>
-      <h6 class="heading">Ut ipsum vivamus tincidunt</h6>
-    </div>
-    <ul id="latest" class="nospace group sd-third">
-      <li class="one_third first">
-        <article>
-          <figure><a class="imgover" href="#"><img src="images/1.jpg" alt=""></a>
-            <figcaption>
-              <h6 class="heading">Nisl nullam odio justo pharetra</h6>
-              <ul class="nospace meta clear">
-                <li><i class="fas fa-user"></i> <a href="#">Admin</a></li>
-                <li>
-                  <time datetime="2045-04-06T08:15+00:00">06 Apr 2045</time>
-                </li>
-              </ul>
-            </figcaption>
-          </figure>
-          <p>Et sagittis ac dignissim nec metus proin nunc maecenas vel nulla vivamus mattis massa vitae metus proin nunc maecenas vel nulla vivamus mattis massa vitae.</p>
-          <footer><a href="#">Read More</a></footer>
-        </article>
-      </li>
-      <li class="one_third">
-        <article>
-          <figure><a class="imgover" href="#"><img src="images/demo/348x261.png" alt=""></a>
-            <figcaption>
-              <h6 class="heading">Nisl nullam odio justo pharetra</h6>
-              <ul class="nospace meta clear">
-                <li><i class="fas fa-user"></i> <a href="#">Admin</a></li>
-                <li>
-                  <time datetime="2045-04-05T08:15+00:00">05 Apr 2045</time>
-                </li>
-              </ul>
-            </figcaption>
-          </figure>
-          <p>Et sagittis ac dignissim nec metus proin nunc maecenas vel nulla vivamus mattis massa vitae metus proin nunc maecenas vel nulla vivamus mattis massa vitae.</p>
-          <footer><a href="#">Read More</a></footer>
-        </article>
-      </li>
-      <li class="one_third">
-        <article>
-          <figure><a class="imgover" href="#"><img src="images/demo/348x261.png" alt=""></a>
-            <figcaption>
-              <h6 class="heading">Nisl nullam odio justo pharetra</h6>
-              <ul class="nospace meta clear">
-                <li><i class="fas fa-user"></i> <a href="#">Admin</a></li>
-                <li>
-                  <time datetime="2045-04-04T08:15+00:00">04 Apr 2045</time>
-                </li>
-              </ul>
-            </figcaption>
-          </figure>
-          <p>Et sagittis ac dignissim nec metus proin nunc maecenas vel nulla vivamus mattis massa vitae metus proin nunc maecenas vel nulla vivamus mattis massa vitae.</p>
-          <footer><a href="#">Read More</a></footer>
-        </article>
-      </li>
-    </ul>
-    <!-- ################################################################################################ -->
-  </section>
-</div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
+
 <!-- Bottom Background Image Wrapper -->
 
 <!-- End Bottom Background Image Wrapper -->

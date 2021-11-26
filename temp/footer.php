@@ -1,4 +1,4 @@
-<div class="bgded overlay" style="background-image:url('images/demo/backgrounds/01.png');">
+<div class="bgded overlay" style="background-image:linear-gradient(135deg, #09203f 10%, #537895 100%)">
     <!-- ################################################################################################ -->
     <div class="wrapper row4">
         <footer id="footer" class="hoc clear">

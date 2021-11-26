@@ -24,6 +24,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>Assigned Work</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="fa fa-list"></i><a href="working_assign.php">Assigned Work</a></li>
+                         <li><i class="fa fa-list"></i><a href="work_distribution_list_portal.php">Distributed Work</a></li>
                         
                     </ul>
                 </li>
