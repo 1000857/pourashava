@@ -105,44 +105,11 @@
                                                 echo "User";
                                             } 
                                         ?></td>
-                                        
-                                            
-                                        
-                                        <!--<td><?= $service['occupation']?></td>
-                                        <td><?= $service['education']?></td>
-                                        <td><?= $service['relegion']?></td>
-                                        <td><?= $service['present_village']?></td> 
-                                        <td><?= $service['present_ward']?></td>
-                                        <td><?= $service['present_upozilla']?></td>
-                                        <td><?= $service['present_thana']?></td>
-                                        <td><?= $service['present_district']?></td>
-                                        <td><?= $service['permanent_village']?></td>
-                                        <td><?= $service['permanent_ward']?></td>
-                                        <td><?= $service['permanent_upozilla']?></td>
-                                        <td><?= $service['permanent_thana']?></td>
-                                        <td><?= $service['permanent_district']?></td>
-                                        <td><?= $service['mobile']?></td>
-                                        <td><?= $service['email']?></td>
-                                        <td><?= $service['other']?></td>
-                                        <td><?= $service['pic']?></td>-->
-
-
-
-
-
-
                                     
                                         <td>
-                                           
-
-                                            
-
-                                            <a  href="#" class="btn btn-danger btn-sm">
+                                            <a  href="user_delete_action.php?user_id=<?=$service['id']?>" class="btn btn-danger btn-sm">
                                                 <i class="fa fa-trash"></i>Delete
                                             </a>
-
-
-
                                             
                                         </td>
                                     </tr>

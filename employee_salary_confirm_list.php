@@ -121,6 +121,9 @@
                                             }
                                             elseif ($service['Post'] == '9') {
                                                 echo "Administrative Officer";
+                                            }
+                                            elseif ($service['Post'] == '10') {
+                                                echo "Doctor";
                                             } 
                                         ?></td>
                                         <td><?= $service['Phone']?></td>

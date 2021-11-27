@@ -76,11 +76,12 @@ $uid = $_SESSION['user_id'];
                         </div>
                         
                         <div class="p-t-15">
-                            <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+                            <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button></br>
+                            
                         </div>
                     </form>
-                    <button type="button"  class="btn chngpass btn-outline-info"><a href="change_pass_form.php"><b>Change password</b></a></button>
-                        <button type="button" class="btn delac btn-outline-info"><a href="delete_profile.php"><b>Delete account</b></a></button>
+                    <a class="btn btn-success btn-sm" href="change_pass_form.php"><b>Change password</b></a>
+                    <a href="delete_profile.php" class="btn btn-danger btn-sm"><b>Delete account</b></a>
                 </div>
             </div>
         </div>

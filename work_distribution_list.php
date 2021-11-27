@@ -126,14 +126,14 @@
                                         ?></td>
                                         <td><span class="badge <?php if($service['is_done'] == '1') {
                                             echo 'badge-success';
-                                        } elseif($service['is_done'] == ""){
+                                        } elseif($service['is_done'] == "0"){
                                             echo 'badge-danger';
                                         }  ?>">
                                         <?php 
                                             if ($service['is_done'] == '1') {
                                                 echo "Completed";
                                             } 
-                                            elseif ($service['is_done'] == "") {
+                                            elseif ($service['is_done'] == "0") {
                                                 echo "Not Completed";
                                             } 
                                         ?>

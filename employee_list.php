@@ -131,9 +131,11 @@
                             
                                         <td>
                                             
-
-                                            <a  href="#" class="btn btn-danger btn-sm">
-                                                <i class="fa fa-trash"></i>Delete
+                                            <a  href="employee_update_form.php?emp_id=<?=$service['id']?>" class="btn btn-info btn-sm">
+                                                <i class="fa fa-plus-square"></i> Update
+                                            </a>
+                                            <a  href="employee_delete_action.php?emp_id=<?=$service['id']?>" class="btn btn-danger btn-sm">
+                                                <i class="fa fa-trash"></i> Delete
                                             </a>
 
 
