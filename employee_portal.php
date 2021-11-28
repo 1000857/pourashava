@@ -77,9 +77,9 @@ if (!isset($_SESSION['loggedin'])){
                                                 echo "Administrative Officer";
                                             }
                                             elseif ($user['Post'] == '10') {
-                                                echo "Doctor";
+                                                echo "Doctor (".$user['Expert']. ")";
                                             }  
-                                        ?>(<?= $user['Expert']?>)</p>
+                                        ?></p>
                                         </div>
                                         
                                     </div>

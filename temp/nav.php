@@ -39,10 +39,12 @@
                     </ul>
                 </li>
                 <?php
-                    if(!isset($_SESSION['loggedin']) || isset($_SESSION['employee_role'])){
+                    if(!isset($_SESSION['loggedin'])){
                 ?>
                     <li><a href="employee_portal.php">Portal</a></li>
-                <?php  } ?>
+                <?php  } elseif (isset($_SESSION['employee_role'])) { ?>
+                        <li><a href="employee_portal.php">Portal</a></li>
+                <?php } ?>
                 <li><a href="doctor_list.php">DOCTOR APPOINTMENT</a></li>
                 <li><a href="complain_form.php">COMPLAIN</a></li>
             </ul>

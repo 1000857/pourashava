@@ -36,8 +36,8 @@
                     </ul>
                 </li>
                 <?php 
-            if(isset($_SESSION['loggedin']) && $_SESSION['user_role']==10){ ?>
-            <?php } ?>
+            if(isset($_SESSION['loggedin']) && $_SESSION['employee_role']==10){ ?>
+
                 <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>APPOINMENT</a>
                     <ul class="sub-menu children dropdown-menu">
@@ -45,7 +45,7 @@
                         
                     </ul>
                 </li>
-                
+            <?php } ?>
                
              
              
