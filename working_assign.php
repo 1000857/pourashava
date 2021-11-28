@@ -113,16 +113,11 @@ if (!isset($_SESSION['loggedin'])) {
                             <?php } ?>
                             </tbody>
                         </table>
-
-
                     </div>
                 </div>
             </div>
         </div>
-
         <!--/.col-->
-
-
     </div> <!-- .content -->
 </div><!-- /#right-panel -->
 

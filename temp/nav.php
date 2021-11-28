@@ -38,7 +38,11 @@
                         <li><a href="house_permission_form.php">HOUSE PERMISSION</a></li>
                     </ul>
                 </li>
-                <li><a href="employee_portal.php">Portal</a></li>
+                <?php
+                    if(!isset($_SESSION['loggedin']) || isset($_SESSION['employee_role'])){
+                ?>
+                    <li><a href="employee_portal.php">Portal</a></li>
+                <?php  } ?>
                 <li><a href="doctor_list.php">DOCTOR APPOINTMENT</a></li>
                 <li><a href="complain_form.php">COMPLAIN</a></li>
             </ul>

@@ -32,7 +32,7 @@ session_start();
 			
 			foreach($result AS $row){
 				$_SESSION['user_name'] = $row['First_name'];
-				$_SESSION['user_role'] = $row['Post'];
+				$_SESSION['employee_role'] = $row['Post'];
 				$_SESSION['user_id'] = $row['id'];
 			}
 			$_SESSION['loggedin'] = true;

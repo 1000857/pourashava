@@ -1,13 +1,12 @@
-<?php session_start()?>
- <?php
- if(!$_SESSION['loggedin']){
-        header("location:signin_form.php");
-    }
-?>
+
 
 <?php include_once 'temp/header.php'; ?>
 <?php include_once 'temp/nav.php'; ?>
-
+<?php
+if(!$_SESSION['loggedin']){
+    header("location:signin_form.php");
+}
+?>
  <?php
         if(isset($_SESSION['msg'])){ ?>
             <div>
