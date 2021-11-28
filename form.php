@@ -1,10 +1,10 @@
-<?php session_start(); ?>
-<?php
-if (!isset($_SESSION['loggedin'])){
-    header('location:signin_form.php');
-    exit;
-}
+<?php session_start()?>
+ <?php
+ if(!$_SESSION['loggedin']){
+        header("location:signin_form.php");
+    }
 ?>
+
 <?php include_once 'temp/header.php'; ?>
 <?php include_once 'temp/nav.php'; ?>
 

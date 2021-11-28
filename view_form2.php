@@ -67,4 +67,17 @@ echo $number;
 ?><br>
 <?php
 $number =  random_int(100, 100000);
-echo $number;
+echo $number;?>
+
+    <?php
+    // Array containing sample image file names
+    $images = array("mujib.png", "1.jpg");
+    
+    // Loop through array to create image gallery
+    foreach($images as $image){
+        echo '<div class="img-box">';
+            echo '<img src="/images/mujib.png">';
+            echo '<p><a href="/examples/php/download.php?file=' . urlencode($image) . '">Download</a></p>';
+        echo '</div>';
+    }
+    ?>

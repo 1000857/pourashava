@@ -31,7 +31,11 @@
 
     <?php 
                                     
-    
+    $noid = $_SESSION['user_id'];
+
+    if(!$_SESSION['loggedin']){
+        header("location:employee_signin_form.php");
+    }
     include_once 'db_con.php';
     $conn = connect();
     $sql = "SELECT * FROM notice WHERE id = $noid";

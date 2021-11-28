@@ -1,6 +1,6 @@
 
-<?php session_start()?>
-<!DOCTYPE html>
+
+ <!DOCTYPE html>
 
 <html lang="en">
 <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
@@ -51,8 +51,9 @@
             <ul class="nospace">
 
 
-                 
+                
 <div class="dropdown">
+
    <?php 
             if(isset($_SESSION['loggedin']) && $_SESSION['user_role']!=1){ ?>
   <button class="dropbtn"><?php echo $_SESSION['user_name']; ?></button>

@@ -76,19 +76,14 @@
                             </div>
                         </div>
                     </div>
-                  <!-- <div class="input-group">
-                        <label class="label">Job Position</label>
-                        <div class="rs-select2 js-select-simple select--no-search">
-                            <select name="subject">
-                                <option disabled="disabled" selected="selected">Choose option</option>
-                                <option>Admin</option>
-                                <option>Mayor</option>
-                                <option>Admin Officer</option>
-                                <option>Peon</option>
-                            </select>
-                            <div class="select-dropdown"></div>
+               
+                        <div class="col-2">
+                            <div class="input-group">
+                            <label style="color: black;">Passport Size Photo <span class="required">*</span></label>
+                            <input type="file" name="photo" id="name" class="field-long" />
+                            </div>
                         </div>
-                    </div> -->
+
                     <div class="p-t-15">
                         <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
                     </div>

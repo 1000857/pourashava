@@ -43,12 +43,12 @@ if($_POST){
         exit;
     }
     if($lname == ''){
-        $_SESSION['msg']= 'Please insert your Surname.<br>';
+        $_SESSION['msg']= '<i style="color:red;margin-left:400px;font-size:20px;font-family:calibri ;">Please insert your Surname.</i><br>';
         header('location:form.php');
         exit;
     }
     if($father == ''){
-        $_SESSION['msg']= 'Please insert your Father name.<br>';
+        $_SESSION['msg']= '<i style="color:red;margin-left:400px;font-size:20px;font-family:calibri ;">Please insert your Father name</i><br>';
         header('location:form.php');
         exit;
     }
@@ -229,7 +229,7 @@ if($_POST){
 
 
             $conn->query($sql);
-            $_SESSION['msg']= 'Registered Successfully. Wait for Approved<br>';
+            $_SESSION['msg']= '<i style="color:green; margin-left: 50px; font-size:20px;font-family:calibri ;"> Registered Successfully. Wait for Approved</i><br>';
             header('location:form.php');
 //        }
 //    }
